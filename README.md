@@ -4,3 +4,4 @@
 
 Kelompok 2:
 - Akbar Mahmudin
+- Suci Sukmawati
