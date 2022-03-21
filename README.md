@@ -4,4 +4,4 @@
 
 Kelompok 2:
 - Akbar Mahmudin
-- Nika QIsty Fatharani
+- Nika Qisty Fatharani
