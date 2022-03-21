@@ -4,6 +4,6 @@
 
 Kelompok 2:
 - Akbar Mahmudin
-- Suci Sukmawati
+- Suci Sukmawati | 2008656
 - Reihan Manzis Syahputra
 - Nika Qisty Fatharani
