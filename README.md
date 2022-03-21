@@ -6,4 +6,4 @@ Kelompok 2:
 - Akbar Mahmudin
 - Suci Sukmawati
 - Reihan Manzis Syahputra
-- Nika Qisty Fatharani
+- Nika Qisty Fatharani | 2000662    
