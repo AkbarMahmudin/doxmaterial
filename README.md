@@ -3,7 +3,7 @@
 ## Tubes Pemrograman Web
 
 Kelompok 2:
-- Akbar Mahmudin
 - Suci Sukmawati | 2008656
-- Reihan Manzis Syahputra
+- Akbar Mahmudin | 2010115
+- Reihan Manzis Syahputra | 2008580
 - Nika Qisty Fatharani
