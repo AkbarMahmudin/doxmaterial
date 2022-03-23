@@ -9,6 +9,8 @@ body {
   color: #2e3239;
   transition: .5s;
   padding: 0 1rem;
+  position: relative;
+  margin: var(--header-height) 0 0 0;
 }
 /* =============== SIDE BAR ================ */
 :root{
@@ -42,18 +44,17 @@ a{
 
 .header_toggle{
   color: var(--first-color);
-  font-size: 1.5rem;
   cursor: pointer;
 }
 .btn-toggle{
   cursor: pointer;
   color : #ffffff;
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border: none;
   border-radius :2px;
   background-color : var(--secondary-color);
-  font-size: 1rem;
+  font-size: .8rem;
 }
 /*===== The Navs =====*/
 .left-sidebar{
@@ -85,7 +86,6 @@ a{
   align-items: center;
   column-gap: 1.6rem;
   padding: .5rem 0 .5rem 1.5rem;
-  margin-bottom:2rem;
 }
 
 .nav_logo{
@@ -170,17 +170,17 @@ a{
 /* responsive desktop */
 @media screen and (min-width : 768px){
   body{
-    margin: calc(var(--header-height)+ 1rem) 0 0 0;
-    padding-left: calc(var(--nav-width)+ 2rem);
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width) + 2rem);
   }
   .header{
-    height: calc(var(--header-height)+ 1 rem);
-    padding: 1rem 2rem 0 6rem;
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
 
   }
   .left-sidebar{
     left: 0;
-    padding-top: 1rem;
+    padding: 1rem 0rem 0rem 0rem;
   }
   .padding-list{
     padding: .5rem 0.3rem 0 0.3rem;
@@ -190,11 +190,9 @@ a{
     background-color: none;
     transition: .5s;
   }
-  .nav_logo-icon{
-    padding : none;
-  }
   .show{
     width: calc(var(--nav-width) + 156px);
+
   }
   .show .nav_logo-icon{
     width: 120px;

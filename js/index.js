@@ -17,7 +17,7 @@ const showSide = (toggleId, navId, bodyId, headerId) =>{
             toggle.classList.toggle('fa-x')
             // padding body
             bodypd.classList.toggle('body-pd')
-            // padding body
+            // padding head
             headerpd.classList.toggle('body-pd')
         })
     }
