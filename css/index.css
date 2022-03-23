@@ -62,12 +62,15 @@ a{
   left: -30%;
   width: var(--nav-width);
   height: 100vh;
+  padding: 1rem 0 0 0;
   background-color: var(--first-color);
-  padding: .5rem 0rem 0 0;
   transition: .5s;
   z-index: 100;
 }
-
+.padding-list{
+  padding: .5rem 0.3rem 0 0.3rem;
+  transition: .5s;
+}
 .nav{
   height: 100%;
   display: flex;
@@ -177,11 +180,18 @@ a{
   }
   .left-sidebar{
     left: 0;
-    padding: 1rem 0rem 0 0;
+    padding-top: 1rem;
+  }
+  .padding-list{
+    padding: .5rem 0.3rem 0 0.3rem;
+    transition: .5s;
   }
   .nav_bottom{
     background-color: none;
     transition: .5s;
+  }
+  .nav_logo-icon{
+    padding : none;
   }
   .show{
     width: calc(var(--nav-width) + 156px);
@@ -190,11 +200,17 @@ a{
     width: 120px;
     height: 120px;
     transition: .5s;
-    margin-left: 30px;
+    margin-left: 34px;
+    padding : 0rem 0rem 0rem 0rem;
   }
   .show .nav_bottom{
     background-color: var(--secondary-color);
     transition: .5s;
+  }
+  .show .padding-list{
+    padding: .5rem 0.9rem 0 0.9rem;
+    transition: .5s;
+    
   }
   /*padding desktop*/
   .body-pd{
