@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* komponen sidebar */
 body {
   font-family: 'Hind', sans-serif;
   color: #2e3239;
@@ -11,7 +10,7 @@ body {
   padding: 0 1rem;
   position: relative;
   padding-left: calc(var(--nav-width) + 1rem);
-  margin: 1rem 0 0 0;
+  margin: 1rem 1rem 0 0;
 }
 /* =============== SIDE BAR ================ */
 :root{
@@ -287,22 +286,21 @@ a{
 }
 
 /* komponen tabel */
-.container_table{
-  overflow-x:auto;
-}
+
 .table_main{
   text-align: center;
-  vertical-align: middle;
+  width: 100%;
+
 }
 .table_main thead{
   font-weight: bold;
   color: var(--first-color);
   font-size: larger; 
 }
-.table_main tr{
-  border-top-width: 2px;
-  padding : 9px;
+.table_main td{
+  font-size: larger;
+  padding: 0rem 0rem 2rem 0rem;
 }
 .table_main tr,td{
-  padding: 0rem 5rem 1rem 0rem;
+  padding: 0rem 5rem 4rem 0rem;
 }
