@@ -3,15 +3,6 @@
     justify-content: left;
 }
 
-.wrap-top{
-    display: flex;
-    flex-direction: row;
-}
-
-.title{
-    margin-left: 30px;
-}
-
 .dropdown-btn i{
     margin-right: 10px;
 }

@@ -24,6 +24,15 @@ a{
   text-decoration: none;
 }
 
+.wrap-top{
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  margin-left: 30px;
+}
+
 .header_toggle{
   transition: .5s;
   color: var(--first-color);
