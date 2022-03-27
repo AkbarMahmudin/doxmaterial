@@ -83,10 +83,37 @@
 
       <!-- start container orders -->
         <div class="container-orders">
-            <!-- select date -->
-            <form class="date-orders">
-                <input type="date" name="date-orders">
-            </form>
+
+            <!-- start wrap button filter and date -->
+            <div class="wrap-filter-date">
+
+                <!-- start button filter -->
+                <div class="dropdown">
+                    <button class="btn-secondary filter-employees dropdown-btn">
+                        <i class="fa-solid fa-filter filter-icon"></i>
+                        Filter
+                    </button>
+                    <div class="dropdown-content">
+                    <a href="../pages/employees.html">Outlet Bandung I</a>
+                    <a href="#">Outlet Bandung II</a>
+                    <a href="#">Outlet Surabaya</a>
+                    <a href="#">Outlet Yogyakarta</a>
+                    <a href="#">Outlet Jakarta</a>
+                    <a href="#">Outlet Tasik</a>
+                    <a href="#">Outlet Bekasi</a>
+                    <a href="#">Outlet Garut</a>
+                    </div>
+                </div>
+                <!-- end button filter -->
+
+                <!-- select date -->
+                <form class="date-orders">
+                    <input type="date" name="date-orders">
+                </form>
+
+            </div>
+            <!-- end wrap button filter dan date-->
+        
 
             <!-- orders table -->
             <div class="container_table">
@@ -115,7 +142,7 @@
                     <td>45.000</td>
                     <td>2</td>
                     <td>90.000</td>
-                    <td><button class="btn-secondary">Undone</button></td>
+                    <td><button class="btn-undone">Undone</button></td>
                 </tr>
     
                 <tr>
@@ -124,7 +151,7 @@
                     <td>100.000</td>
                     <td>2</td>
                     <td>200.000</td>
-                    <td><button class="btn-primary">Done</button></td>
+                    <td><button class="btn-done">Done</button></td>
                 </tr>
     
                 <tr>
@@ -133,7 +160,7 @@
                     <td>30.000</td>
                     <td>2</td>
                     <td>60.000</td>
-                    <td><button class="btn-primary">Done</button></td>
+                    <td><button class="btn-done">Done</button></td>
                 </tr>
     
                 <tr>
@@ -142,7 +169,7 @@
                     <td>35.000</td>
                     <td>2</td>
                     <td>70.000</td>
-                    <td><button class="btn-primary">Done</button></td>
+                    <td><button class="btn-done">Done</button></td>
                 </tr>
     
                 <tr>
@@ -151,7 +178,7 @@
                     <td>45.000</td>
                     <td>2</td>
                     <td>90.000</td>
-                    <td><button class="btn-primary">Done</button></td>
+                    <td><button class="btn-done">Done</button></td>
                 </tr>
                 </table>
                 <!-- end container table -->

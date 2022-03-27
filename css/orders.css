@@ -11,9 +11,67 @@
     margin-left: 60px;
 }
 
+.wrap-filter-date{
+    display: flex;
+    margin: 35px 0 30px 0;
+    align-items: center;
+}
+
+.dropdown-btn i{
+    margin-right: 9px;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+    margin-right: 45px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropdown-btn {background-color: #646262;}
+
+.filter-employees {
+    display: flex;
+    padding: 7px ;
+    text-align: center;
+    align-items: center;
+    font-size:small;
+}
+
+.filter-icon{
+    padding-left: 9px;
+}
+ 
+.filter-employees{
+    border-radius: 5px;
+    width: 90px;
+}
+
+.filter-employees:hover{
+    cursor: pointer;
+}
 
 .date-orders{
-    margin: 30px 0;
+    margin: 10px 0;
     border-radius: 10px;
 }
 
@@ -27,9 +85,16 @@
     border-top: 1px solid black;
 }
 
-.btn-primary, .btn-secondary{
+.btn-done, .btn-undone{
     padding: 10px;
     border-radius: 5px;
     width: 100px;
-    border-color: none;
+}
+
+.btn-done{
+    background-color: #018A91;
+}
+
+.btn-undone{
+    background-color: #C4C4C4;
 }
