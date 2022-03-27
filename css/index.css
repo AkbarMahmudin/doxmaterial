@@ -229,12 +229,13 @@ a{
   color: var(--first-color);
   background-color: #C4C4C4;
   font-size : 15px;
-  font-weight: bold;
+  font-weight: 500;
   padding: .8rem;
   border: none;
   border-radius : 5px;
   transition: .5s;
   cursor: pointer;
+  text-align: center;
 }
 .btn-block {
   display: block;
