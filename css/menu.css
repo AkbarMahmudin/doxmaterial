@@ -1,0 +1,163 @@
+.menu {
+  padding-right: 1em;
+}
+
+.content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1em;
+}
+
+.card {
+  margin-bottom: 1rem;
+}
+
+.btn-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.btn-add i {
+  margin: 3rem;
+}
+
+.btn-add:hover {
+  color: #007177;
+  transition: .5s;
+}
+
+.btn-filter {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin: 1rem;
+}
+
+.form-search {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.input-search {
+  padding: .75rem 12px;
+  outline: none;
+  border: 1px solid #b0b0b046;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 70%;
+}
+
+.btn-search {
+  width: 28%;
+  margin-left: 2%;
+}
+
+.cart {
+  display: none;
+}
+
+.price {
+  color: #999999;
+  font-weight: 500;
+}
+
+/* responsive desktop */
+@media screen and (min-width : 768px) {
+  .container-menu {
+    display: grid;
+    grid-template-columns: auto 340px;
+    gap: 1em;
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+  }
+
+  .card {
+    margin-bottom: 0;
+    cursor: pointer;
+  }
+
+  .btn-filter {
+    position: static;
+    margin: 0;
+  }
+  
+  .control {
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-search {
+    padding: 0;
+    width: 30%;
+  }
+
+  .cart {
+    display: block;
+    position: fixed;
+    background-color: #fff;
+    height: 100vh;
+    width: 360px;
+    right: 0;
+    top: 0;
+    cursor: default;
+  }
+  
+  .cart-body {
+    padding: 1rem;
+  }
+
+  .cart-footer {
+    position: absolute;
+    bottom: 0;
+    background-color: var(--first-color);
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .cart-item {
+    margin: 1rem 0 14px 0;
+  }
+
+  .cart-item img {
+    float: left;
+    width: 100px;
+    border-radius: 5px;
+    margin-right: 1em
+  }
+
+  .counter {
+    margin: 4px 0 8px 0;
+  }
+
+  .counter .btn {
+    padding: 4px 10px;
+  }
+
+  .counter span {
+    margin: 0 10px;
+  }
+
+  .detail-order {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #fff;
+    margin-bottom: 14px;
+  }
+}
