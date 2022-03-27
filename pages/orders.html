@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOX CAFFE | PoS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="../img/logo.png"type = "image/x-icon">
+  <!-- Default style -->
+  <link rel="stylesheet" href="../css/index.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" href="../css/orders.css">
+
+</head>
+<body id="body-pd">
+
+<!-- wrap sidebar + title -->
+<div class="wrap-top">
+    <!-- Sidebar -->
+    <div class="header_toggle"id="header">
+      <button class="btn-toggle fa fa-bars"id="header-toggle">
+      </button>
+    </div>
+  
+    <div class="left-sidebar" id="side-bar">
+      <nav class="nav">
+        <div>
+          <a href="#" class="nav_logo">
+            <img src="../img/logo.png" alt=""class="nav_logo-icon">
+          </a>
+  
+          <div class="padding-list">
+            <div class="side-outlet">
+                Jl. Buahbatu, Kec. Bandung
+            </div>
+          <div class="nav_list">
+            <a href="../pages/dashboard.html" class="nav_link">
+              <i class="fa-solid fa-chart-simple nav_icon"></i>
+              <span class="nav_name">Dashboard</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="fa-solid fa-utensils nav_icon"></i>
+              <span class="nav_name">Menus</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="fa-solid fa-shop nav_icon"></i>
+              <span class="nav_name">Outlets</span>
+            </a>
+            <a href="#" class="nav_link active">
+              <i class="fa-solid fa-pen-to-square nav_icon"></i>
+              <span class="nav_name">Orders</span>
+            </a>
+            <a href="#" class="nav_link">
+              <i class="fa-solid fa-user-group nav_icon"></i>
+              <span class="nav_name">Employees</span>
+            </a>
+          </div>
+          </div>
+        </div>
+        <div class="nav_bottom">
+          <div class="nav_bottom-profil">
+            <img src="../img/profil.png" alt="" class="profil_image">
+            <span class="profil_name">John Doe <br> <span class="profil_role">Cashier</span></span>
+            <button class="btn-logout nav_bottom-link fa-solid fa-right-from-bracket">
+          </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- End Sidebar -->
+  
+    <!-- title -->
+    <h2 class="title">Orders</h2>
+    <!-- end title -->
+  
+    <!-- end wrap sidebar + title -->
+  </div>
+
+    <!-- Content Boody -->
+    <main>
+      <!-- Coding disini -->
+
+      <!-- start container orders -->
+        <div class="container-orders">
+
+            <!-- start wrap button filter and date -->
+            <div class="wrap-filter-date">
+
+                <!-- start button filter -->
+                <div class="dropdown">
+                    <button class="btn-secondary filter-employees dropdown-btn">
+                        <i class="fa-solid fa-filter filter-icon"></i>
+                        Filter
+                    </button>
+                    <div class="dropdown-content">
+                    <a href="../pages/employees.html">Outlet Bandung I</a>
+                    <a href="#">Outlet Bandung II</a>
+                    <a href="#">Outlet Surabaya</a>
+                    <a href="#">Outlet Yogyakarta</a>
+                    <a href="#">Outlet Jakarta</a>
+                    <a href="#">Outlet Tasik</a>
+                    <a href="#">Outlet Bekasi</a>
+                    <a href="#">Outlet Garut</a>
+                    </div>
+                </div>
+                <!-- end button filter -->
+
+                <!-- select date -->
+                <form class="date-orders">
+                    <input type="date" name="date-orders">
+                </form>
+
+            </div>
+            <!-- end wrap button filter dan date-->
+        
+
+            <!-- orders table -->
+            <div class="container_table">
+                <h2>Recent Orders</h2>
+                <table class="table_main" border="0px">
+                <thead>
+                    <tr>
+                        <td colspan="6" class="border-thead"></td>
+                    </tr>
+                    <tr>
+                        <td>Menu</td>
+                        <td>ID</td>
+                        <td>Price</td>
+                        <td>Qty</td>
+                        <td>Total</td>
+                        <td>Status</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" class="border-thead"></td>
+                    </tr>
+                </thead>
+    
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012205</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td><button class="btn-undone">Undone</button></td>
+                </tr>
+    
+                <tr>
+                    <td>Pizza</td>
+                    <td>DC - 01012204</td>
+                    <td>100.000</td>
+                    <td>2</td>
+                    <td>200.000</td>
+                    <td><button class="btn-done">Done</button></td>
+                </tr>
+    
+                <tr>
+                    <td>Iced Coffe</td>
+                    <td>DC - 01012203</td>
+                    <td>30.000</td>
+                    <td>2</td>
+                    <td>60.000</td>
+                    <td><button class="btn-done">Done</button></td>
+                </tr>
+    
+                <tr>
+                    <td>Toast</td>
+                    <td>DC - 01012202</td>
+                    <td>35.000</td>
+                    <td>2</td>
+                    <td>70.000</td>
+                    <td><button class="btn-done">Done</button></td>
+                </tr>
+    
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td><button class="btn-done">Done</button></td>
+                </tr>
+                </table>
+                <!-- end container table -->
+            </div>
+        <!-- end container orders -->
+        </div>
+
+    </main>
+    <!-- End Content Body -->
+
+    <!-- Import JS -->
+    <script src="https://kit.fontawesome.com/94fce472e4.js" crossorigin="anonymous"></script>
+    <!-- Default js -->
+    <script src="../js/index.js"></script>
+    <!-- Custom js -->
+    <script src="../js/custom.js"></script>
+    
+</body>
+
+</html>
