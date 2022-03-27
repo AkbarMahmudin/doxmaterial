@@ -1,0 +1,35 @@
+.wrap-top{
+    display: flex;
+    flex-direction: row;
+}
+
+.title{
+    margin-left: 30px;
+}
+
+.container-orders{
+    margin-left: 60px;
+}
+
+
+.date-orders{
+    margin: 30px 0;
+    border-radius: 10px;
+}
+
+.table-main{
+    
+  text-align: center;
+  vertical-align: middle;
+}
+
+.border-thead{
+    border-top: 1px solid black;
+}
+
+.btn-primary, .btn-secondary{
+    padding: 10px;
+    border-radius: 5px;
+    width: 100px;
+    border-color: none;
+}
