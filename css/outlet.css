@@ -1,0 +1,53 @@
+.wrap-top{
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    margin-left: 30px;
+}
+
+.container-outlets {
+    margin-left: 60px;
+}
+
+.card{
+    align-items: center;
+    justify-content: left;
+    text-align: center;
+    padding: 10px 0;
+    width: fit-content;
+}
+
+.card p{
+    color: #BEBEBE;
+}
+
+.list-outlets {
+    display: flex;
+    flex-direction: row;
+}
+
+.list-outlet-row {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.outlet-card {
+    margin: 30px 100px 20px 0;
+}
+
+.img-card i{
+    width: 100px;
+    margin: 50px 80px;
+    padding-top: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .list-outlets{
+        flex-direction: column;       
+    }
+    .list-outlet-row{
+        flex-direction: column;
+    }
+}
