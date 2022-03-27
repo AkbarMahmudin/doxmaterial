@@ -1,0 +1,93 @@
+.wrap-top{
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    margin-left: 30px;
+}
+
+.payment_menu-cashier {
+    margin-top: 100px;
+    margin-left: 350px;
+    position: absolute;
+    display: inline-block;
+}
+
+.card {
+    width: 100%;
+    height: 400px;   
+}
+
+.title_card {
+    padding: 2rem;
+}
+
+.title_card h1 {
+    font-weight: 500;
+}
+
+.payment-total {
+    margin-top: 1.5rem;
+}
+
+label {
+    font-weight: 500;
+}
+
+input[type="text"]::placeholder {
+    color: #c4c4c4;
+}
+
+input[type="text"]{
+    height: 100%;
+    padding: .5rem 12px;
+    outline: none;
+    border: 1px solid #b0b0b046;
+    border-radius: 5px;
+    inline-size: 100%;
+    width: 300px;
+}
+
+.input-search hr {
+    margin-top: 1rem;
+}
+
+.label-struck {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.total-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.total-label p {
+    color: #01adb5;
+}
+
+.total-label h4 {
+    font-weight: 500;
+}
+
+.kembali-label {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.kembali-label p {
+    color: #c4c4c4;
+}
+
+.kembali-label h4 {
+    font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+    .payment_menu-cashier {
+        margin: 20px 50px;
+    }
+}
