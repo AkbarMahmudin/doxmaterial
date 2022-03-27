@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+body{
+    margin: 0;
+    padding: 0;
+}
+.split-screen{
+    display: flex;
+    flex-direction: column;
+}
+.left, .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left{
+    order: 2;
+    padding: 1rem;
+}
+.left .uppercase{
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-size: smaller;
+}
+.left .copy{
+    text-align: center;
+    padding: 1rem;
+}
+.left form{
+    width: 328px;
+}
+.right{
+    height: 200px;
+    background: url('../img/background-login.png');
+    background-size: cover;
+    order: 1;
+}
+.right .copy img{
+    height: 70%;
+}
+.right .copy{
+    text-align: center;
+}
+label{
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color:var(--first-color);
+    margin-bottom: 0.5rem;
+}
+form input[type="text"],
+form input[type="password"]{
+    display: block;
+    width: 100%;
+    box-sizing:border-box;
+    border-radius: 5px;
+    border: 1px solid #c4c4c4;
+    padding: 1rem;
+    margin-bottom: 1.25rem; 
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.2);
+    transition: .3s;
+    
+}
+form input[type="text"]:focus , form input[type="password"]:focus{
+    outline: none;
+    font-size: 1rem;
+    transition: .3s;
+}
+
+/* responsive desktop */
+@media screen and (min-width : 768px){
+    .split-screen{
+        flex-direction: row;
+        height: 100vh;
+    }
+    .left, .right{
+        display: flex;
+        width: 50%;
+        height: auto;
+    }
+    .left{
+        order: 1;
+    }
+    .left .copy{
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+    .right{
+        order: 2;
+        padding: 0;
+    }
+    .right .copy img{
+        height: 40%;
+    }
+}

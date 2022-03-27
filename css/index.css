@@ -5,11 +5,8 @@
 }
 body {
   font-family: 'Hind', sans-serif;
-  color: #2e3239;
   transition: .5s;
-  padding: 0 1rem;
-  position: relative;
-  padding-left: calc(var(--nav-width) + 1rem);
+  padding: 0 1rem 0 calc(var(--nav-width) + 1rem);
   margin: 1rem 1rem 0 0;
 }
 /* =============== SIDE BAR ================ */
