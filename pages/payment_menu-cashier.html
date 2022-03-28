@@ -84,12 +84,14 @@
       <!-- Coding disini -->
       <div class="payment_menu-cashier">
       <div class="card">
+            <form id="bayar"action ="">
             <div class="title_card">
                 <h1>Pembayaran</h1>
+                
                 <div class="payment-total">
                     <label>Jumlah Bayar</label>
                     <div class="input-search">
-                        <input type="text" placeholder="Nominal"/>
+                        <input type="text" placeholder="Nominal" name="nominal" id="nominal" />
                         <hr style="border :1px solid #C4C4C4;">
                     </div>
                 </div>
@@ -97,16 +99,17 @@
                 <div class="label-struck">
                 <div class="total-label">
                     <h4>Total</h4>
-                    <p>Rp. 200.000</p>
+                    <p id ="total">200000</p>
                 </div>
 
                 <div class="kembali-label">
                     <h4>Kembalian</h4>
-                    <p>Rp. 0</p>
+                    <p id="kembalian"></p>
                 </div>
                 </div>
                 <button class="btn btn-primary btn-block" style="margin-bottom: 10px;">Bayar</button>
             </div>
+            </form>
       </div>
     </div>
     </main>
@@ -117,7 +120,7 @@
     <!-- Default js -->
     <script src="../js/index.js"></script>
     <!-- Custom js -->
-    <script src="../js/custom.js"></script>
+    <script src="../js/payment_menu-cashier/perhitungan.js"></script>
     
 </body>
 

@@ -1,3 +1,6 @@
+.container_table{
+    overflow: auto;
+}
 .container-orders{
     margin-left: 60px;
 }

@@ -80,6 +80,6 @@ input[type="text"]{
 
 @media screen and (max-width: 600px) {
     .payment_menu-cashier {
-        margin: 20px 50px;
+        margin-left: auto;
     }
 }
