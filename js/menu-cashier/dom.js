@@ -50,8 +50,9 @@ const createCartItem = (menuId) => {
   counterNum.innerText = qty;
   counter.append(decrementHandle(counterNum, menuFiltered.price), counterNum, incrementHandle(counterNum, menuFiltered.price));
   cartItem.append(image, menuName, counter, menuPrice);
-  
-  getTotalHarga(menuFiltered.price);
+
+  const totalHargaElm = document.getElementById('total-harga').innerText;
+  getTotalHarga((parseInt(totalHargaElm) + menuFiltered.price));
   return cartItem;
 };
 
@@ -64,8 +65,8 @@ const decrementHandle = (counter, price) => {
       counter.innerText--;
       const itemPrice = counter.parentElement.parentElement.querySelector('p');
       const totalHarga = counter.innerText * price;
-      const totalHargaElm = document.getElementById('total-harga');
-      totalHargaElm.innerText = totalHarga;
+      const totalHargaElm = document.getElementById('total-harga').innerText;
+      getTotalHarga((parseInt(totalHargaElm) - price));
       itemPrice.innerText = `Rp. ${totalHarga}`;
     }
   });
@@ -80,8 +81,8 @@ const incrementHandle = (counter, price) => {
     counter.innerText++;
     const itemPrice = counter.parentElement.parentElement.querySelector('p');
     const totalHarga = counter.innerText * price;
-    const totalHargaElm = document.getElementById('total-harga');
-    totalHargaElm.innerText = totalHarga;
+    const totalHargaElm = document.getElementById('total-harga').innerText;
+    getTotalHarga((parseInt(totalHargaElm) + price));
     itemPrice.innerText = `Rp. ${totalHarga}`;
   });
   return button;
@@ -89,5 +90,6 @@ const incrementHandle = (counter, price) => {
 
 const getTotalHarga = (value) => {
   const totalHargaElm = document.getElementById('total-harga');
-  totalHargaElm.innerText = parseInt(totalHargaElm.innerText) + value;
+  totalHargaElm.innerText = value;
+  localStorage.setItem('TOTAL_HARGA', parseInt(totalHargaElm.innerText));
 };

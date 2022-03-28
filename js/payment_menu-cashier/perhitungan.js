@@ -1,9 +1,17 @@
-
 const nominalInput = document.getElementById('nominal');
+const btnBayar = document.getElementById('btn-bayar');
+const total = document.getElementById('total');
+total.innerText = localStorage.getItem('TOTAL_HARGA');
 
-nominalInput.addEventListener('change', () => {
+nominalInput.addEventListener('keyup', () => {
     const nominal = document.getElementById('nominal').value;
-    const total = document.getElementById('total').innerText;
-    const kembalian = parseInt(nominal) - parseInt(total);
+    const kembalian = parseInt(nominal) - parseInt(total.innerText);
     document.getElementById('kembalian').innerText = kembalian;
 });
+
+btnBayar.addEventListener('click', (event) => {
+    event.preventDefault();
+    alert('Pembayaran Berhasil!');
+    localStorage.setItem('TOTAL_HARGA', 0);
+    history.back();
+})
