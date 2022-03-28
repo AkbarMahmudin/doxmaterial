@@ -93,8 +93,8 @@
           </form>
         </section>
 
-        <section class="content">
-          <article class="card">
+        <section class="content" id="content">
+          <!-- <article class="card">
             <img src="../img/menu/1.png" alt="" class="img-card">
             <div class="card-body">
               <h2>Hamburger</h2>
@@ -132,22 +132,17 @@
               <h2>Iced Coffe</h2>
               <h4 class="price">Rp. 30.000</h4>
             </div>
-          </article>
-
-          <div class="card btn-add">
-            <i class="fa-solid fa-circle-plus"></i>
-            <!-- <div class="card-body">
-            </div> -->
-          </div>
+          </article> -->
+          
         </section>
 
       </div>
 
       <aside class="cart card">
-        <div class="cart-body">
+        <div class="cart-body" id="cart-container">
           <h1>Menu yang dipilih</h1>
 
-          <div class="cart-item">
+          <!-- <div class="cart-item">
             <img src="../img/menu/1.png" alt="Menu 1">
             <h3>Hamburger</h3>
 
@@ -157,13 +152,13 @@
               <a href="#" class="btn btn-secondary">+</a>
             </div>
             <p>Rp. 200.000</p>
-          </div>
+          </div> -->
         </div>
 
         <div class="cart-footer">
           <div class="detail-order">
             <h3>Total:</h3>
-            <h3>Rp. 200.000</h3>
+            <h3 id="total-harga">0</h3>
           </div>
           <a href="payment_menu-cashier.html" class="btn btn-primary btn-block">Lanjut Bayar</a>
         </div>
@@ -176,7 +171,9 @@
     <!-- Default js -->
     <script src="../js/index.js"></script>
     <!-- Custom js -->
-    
+    <script src="../js/menu-cashier/data.js"></script>
+    <script src="../js/menu-cashier/dom.js"></script>
+    <script src="../js/menu-cashier/index.js"></script>
 </body>
 
 </html>
