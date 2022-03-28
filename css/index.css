@@ -8,6 +8,7 @@ body {
   transition: .5s;
   padding: 0 1rem 0 calc(var(--nav-width) + 1rem);
   margin: 1rem 1rem 0 0;
+  color : var(--first-color)
 }
 /* =============== SIDE BAR ================ */
 :root{
@@ -60,6 +61,7 @@ a{
   background-color: var(--first-color);
   transition: .5s;
   z-index: 100;
+  font-size: smaller;
 }
 .padding-list{
   padding: .5rem 0.3rem 0 0.3rem;
@@ -187,16 +189,16 @@ a{
     display: none;
   }
   .nav_list {
-    margin-top: 3rem;
+    margin-top: 2rem;
   }
   .nav_logo {
     padding-bottom: 0;
   }
   .nav_logo-icon{
-    width: 120px;
-    height: 120px;
+    width: 90px;
+    height: 90px;
     transition: .5s;
-    margin-left: 34px;
+    margin-left: 50px;
     padding : 0rem 0rem 0rem 0rem;
   }
   .hide .padding-list{
@@ -224,7 +226,7 @@ a{
     transition: .5s;
   }
   .padding-list{
-    padding: .5rem 0.9rem 0 0.9rem;
+    padding: 0rem 0.9rem 0 0.9rem;
     transition: .5s;  
   }
   /*padding desktop*/
