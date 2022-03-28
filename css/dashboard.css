@@ -1,16 +1,6 @@
-
 .container{
     padding-bottom: 2rem;
 }
-  /* WARNA UTAMA */
-  :root{
-  --first-color: #2E3239;
-  --secondary-color : #018A91;
-
-    --header-height: 3rem;
-  --nav-width: 68px;
-  }
-
 .wrap{
     display: flex;
     flex-wrap: wrap;
@@ -57,10 +47,6 @@
 }
 .secondary{
     background-color: var(--first-color);
-}
-.crd_dashboard .cards:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    transition: .3s;
 }
 .desc   {
     text-align: center;
@@ -113,7 +99,7 @@
 /* responsive */
 
 /* mobile */
- @media only screen and (min-width: 200px) and (max-width: 839px)  {
+ @media only screen and (max-width: 839px)  {
      /* section 2 */
     .col_dashboard{
         width: 100%;

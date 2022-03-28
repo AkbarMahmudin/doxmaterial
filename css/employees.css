@@ -67,6 +67,7 @@
     text-align: center;
     padding: 10px 0;
     width: fit-content;
+    cursor: pointer;
 }
 
 .employee-org h3, p{
