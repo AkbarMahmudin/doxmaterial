@@ -258,7 +258,7 @@ a{
 }
 .btn-primary:hover{
   color: #F2F2F2;
-  background-color: #007177;
+  background-color: #00a2aa;
 }
 
 .btn-secondary{
@@ -266,8 +266,14 @@ a{
   background-color: var(--first-color);
 }
 .btn-secondary:hover{
-  background-color: #464b52;
+  background-color: #242424;
   color: #F2F2F2;
+}
+
+.btn-primary:disabled{
+  color: var(--first-color);
+  background-color: #E0E0E0;
+  cursor: default;
 }
 
 /* komponen card */

@@ -20,7 +20,13 @@ const createMenuElement = (name, price, img) => {
   <h4 class="price">Rp. ${price}</h4>`;
   
   card.addEventListener('click', () => {
-    addToCart(card);
+    const cartIsDuplicate = checkCartDuplicate(card);
+
+    if (!cartIsDuplicate) {
+      addToCart(card);
+    } else {
+      alert(`${name} sudah ada dipesan`);
+    }
   });
   card.append(imageCard, cardBody);
   return card;
@@ -49,6 +55,7 @@ const createCartItem = (menuId) => {
   const counterNum = document.createElement('span');
   counterNum.innerText = qty;
   counter.append(decrementHandle(counterNum, menuFiltered.price), counterNum, incrementHandle(counterNum, menuFiltered.price));
+  cartItem['CART_ID'] = menuId;
   cartItem.append(image, menuName, counter, menuPrice);
 
   const totalHargaElm = document.getElementById('total-harga').innerText;
@@ -56,18 +63,38 @@ const createCartItem = (menuId) => {
   return cartItem;
 };
 
+const checkCartDuplicate = (menuItem) => {
+  const cartItems = document.querySelectorAll('#cart-container > .cart-item');
+
+  if (cartItems.length) {
+    for (const cart of cartItems) {
+      if (cart['CART_ID'] === menuItem['MENU_ID']) {
+        return true;
+      }
+    }
+  }
+  return false;
+};
+
 const decrementHandle = (counter, price) => {
   const button = document.createElement('button');
   button.innerText = '-'
   button.classList.add('btn', 'btn-secondary');
-  button.addEventListener('click', () => {
-    if (counter.innerText > 1) {
-      counter.innerText--;
+  button.addEventListener('click', (event) => {
+    if (counter.innerText >= 1) {
       const itemPrice = counter.parentElement.parentElement.querySelector('p');
+      counter.innerText--;
+      
       const totalHarga = counter.innerText * price;
       const totalHargaElm = document.getElementById('total-harga').innerText;
+      
       getTotalHarga((parseInt(totalHargaElm) - price));
       itemPrice.innerText = `Rp. ${totalHarga}`;
+    }
+
+    if (counter.innerText < 1) {
+      const cartItem = event.target.parentElement.parentElement;
+      cartItem.remove();
     }
   });
   return button;
@@ -78,10 +105,12 @@ const incrementHandle = (counter, price) => {
   button.innerText = '+'
   button.classList.add('btn', 'btn-secondary');
   button.addEventListener('click', () => {
-    counter.innerText++;
     const itemPrice = counter.parentElement.parentElement.querySelector('p');
+    counter.innerText++;
+
     const totalHarga = counter.innerText * price;
     const totalHargaElm = document.getElementById('total-harga').innerText;
+
     getTotalHarga((parseInt(totalHargaElm) + price));
     itemPrice.innerText = `Rp. ${totalHarga}`;
   });
@@ -90,6 +119,15 @@ const incrementHandle = (counter, price) => {
 
 const getTotalHarga = (value) => {
   const totalHargaElm = document.getElementById('total-harga');
+  const buttonNext = document.getElementById('btn-next');
+
   totalHargaElm.innerText = value;
+  if (totalHargaElm.innerText > 0) {
+    buttonNext.removeAttribute('disabled');
+    buttonNext.addEventListener('click', () => window.location.href = '/pages/payment_menu-cashier.html');
+  } else {
+    buttonNext.setAttribute('disabled', true);
+  }
+  
   localStorage.setItem('TOTAL_HARGA', parseInt(totalHargaElm.innerText));
 };
