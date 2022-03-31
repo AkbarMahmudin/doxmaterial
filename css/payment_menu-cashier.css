@@ -46,7 +46,7 @@ input[type="text"]{
 }
 
 .label-struck {
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 2rem;
 }
 
@@ -54,6 +54,7 @@ input[type="text"]{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .total-label p {

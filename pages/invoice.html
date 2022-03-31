@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice</title>
+</head>
+<body>
+  <div id="invoice">
+    <h1>Invoice</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus incidunt eos iure vero, quia ducimus odit aperiam maiores nobis, maxime eveniet! Praesentium voluptate itaque labore vel, assumenda unde maxime quidem.
+    </p>
+  </div>
+  <button id="generatePDF">Download</button>
+  <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+  <script>
+    const invoiceElm = document.getElementById('invoice');
+    const button = document.getElementById('generatePDF');
+
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      // html2pdf().from(invoiceElm).save();
+      console.log(html2pdf());
+    });
+  </script>
+</body>
+</html>

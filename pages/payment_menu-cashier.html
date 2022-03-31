@@ -88,25 +88,29 @@
             <div class="title_card">
                 <h1>Pembayaran</h1>
                 
+                <div class="total-label">
+                    <h3>Total Bayar</h3>
+                    <p id ="total"></p>
+                </div>
+
+                <hr style="border :1px solid #C4C4C4;">
+
                 <div class="payment-total">
                     <label>Jumlah Bayar</label>
                     <div class="input-search">
                         <input type="text" placeholder="Nominal" name="nominal" id="nominal" />
-                        <hr style="border :1px solid #C4C4C4;">
                     </div>
                 </div>
 
                 <div class="label-struck">
-                <div class="total-label">
-                    <h4>Total</h4>
-                    <p id ="total"></p>
-                </div>
 
                 <div class="kembali-label">
                     <h4>Kembalian</h4>
                     <p id="kembalian"></p>
                 </div>
+                
                 </div>
+                
                 <button class="btn btn-primary btn-block" id="btn-bayar" style="margin-bottom: 10px;">Bayar</button>
             </div>
             </form>
@@ -117,6 +121,7 @@
 
     <!-- Import JS -->
     <script src="https://kit.fontawesome.com/94fce472e4.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <!-- Default js -->
     <script src="../js/index.js"></script>
     <!-- Custom js -->
