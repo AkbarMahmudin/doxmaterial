@@ -1,0 +1,86 @@
+.container-chat{
+    display: flex;
+    justify-content: center;
+    height: 670px;
+}
+.card{
+    width: 70%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap-header{
+    padding: 10px;
+    background-color: var(--secondary-color);
+}
+
+/* cs chat */
+.cs-chat{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(224, 227, 230);
+    color: var(--first-color);
+    width: 70%;
+    padding: 10px 20px;
+    border-radius: 25px;
+    margin: 15px 0 20px 10px;
+}
+
+.header, .wrap-chat{
+    padding: 20px;
+}
+
+.cs-chat-profile, .user-chat-profile{
+    display: flex;
+    flex-direction: row;
+}
+
+.cs-chat-profile p, .user-chat-profile p{
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.cs-chat-profile i, .user-name p{
+    margin-right: 10px;
+}
+
+.time{
+    font-size: 13px;
+}
+
+/* user chat */
+.user-chat{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--first-color);
+    color: white;
+    width: 70%;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-align: left;
+    align-items: flex-end;
+    margin: 20px 0 20px 230px;
+}
+
+/* send messages */
+.send-message{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    margin-top: 235px; 
+    justify-content: space-between;
+}
+#text-message{
+    padding: 10px;
+    margin: 0 0 10px 20px;
+}
+
+input{
+    width: 710px;
+    border-radius: 10px;
+}
+
+.send-icon{
+    margin: 7px 40px 0 0 ;
+}
