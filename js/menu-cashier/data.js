@@ -24,4 +24,14 @@ const menus = [
     name: 'Iced Coffee',
     price: 150000,
   },
+  {
+    id: 6,
+    name: 'Chocolate',
+    price: 150000,
+  },
+  {
+    id: 7,
+    name: 'Lemon Tea',
+    price: 150000,
+  },
 ];

@@ -1,13 +1,12 @@
 .payment_menu-cashier {
-    margin-top: 100px;
-    margin-left: 350px;
-    position: absolute;
-    display: inline-block;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
 }
 
 .card {
     width: 100%;
-    height: 400px;   
+    height: fit-content;   
     cursor: default;
 }
 
@@ -55,9 +54,11 @@ input[type="text"]{
     flex-direction: row;
     justify-content: space-between;
     margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 .total-label p {
+    font-size: 24px;
     color: #01adb5;
 }
 
@@ -77,6 +78,51 @@ input[type="text"]{
 
 .kembali-label h4 {
     font-weight: 500;
+}
+
+.e-wallet {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border: 1px solid #b0b0b046;
+    border-radius: 5px;
+    inline-size: 50%;
+}
+
+.wallet {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.e-wallet-no {
+    inline-size: 100%;
+}
+
+.bank {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.transfer-bank {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border: 1px solid #b0b0b046;
+    border-radius: 5px;
+    inline-size: 50%;
+}
+
+.rekening-bank {
+    inline-size: 100%;
+}
+
+.btn-confirm {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.card-label {
+    margin-top: 1rem;
 }
 
 @media screen and (max-width: 600px) {
