@@ -88,18 +88,55 @@
             <div class="title_card">
                 <h1>Pembayaran</h1>
                 
+                <div class="label-struck">
+                    <div class="total-label">
+                        <h4>Total Bayar</h4>
+                        <p id ="total"></p>
+                    </div>
+                
+                    <div class="option-payment">
+                        <div class="option-paid">
+                        <label>Pilih Metode Pembayaran E-Wallet</label>
+                        <span class="wallet">
+                        <select class="e-wallet">
+                            <option>Gopay</option>
+                            <option>OVO</option>
+                            <option>ShopeePay</option>
+                        </select>
+                        <div class="e-wallet-no">
+                            <input type="text" placeholder="Nomor Telepon" />
+                        </div>
+                        </span>
+
+                        <hr style="border :1px solid #C4C4C4;">
+                        
+                        <div class="card-label">
+                        <label>Pilih Metode Pembayaran Card</label>
+                        <span class="bank">
+                        <select class="transfer-bank">
+                            <option>Bank BRI</option>
+                            <option>Bank BNI</option>
+                            <option>Bank BCA</option>
+                        </select>
+                        <div class="rekening-bank">
+                            <input type="text" placeholder="Nomor Rekening (XXXX-XXXX-XXXX)" />
+                        </div>
+                        </span>
+                        </div>
+
+                        <hr style="border :1px solid #C4C4C4;">
+
+                        <div class="btn-confirm">
+                        <button class="btn btn-primary btn-block" style="margin-bottom: 10px;">Konfirmasi</button></div>
+                        </div>
+                    </div>
+
                 <div class="payment-total">
                     <label>Jumlah Bayar</label>
                     <div class="input-search">
                         <input type="text" placeholder="Nominal" name="nominal" id="nominal" />
                         <hr style="border :1px solid #C4C4C4;">
                     </div>
-                </div>
-
-                <div class="label-struck">
-                <div class="total-label">
-                    <h4>Total</h4>
-                    <p id ="total"></p>
                 </div>
 
                 <div class="kembali-label">
