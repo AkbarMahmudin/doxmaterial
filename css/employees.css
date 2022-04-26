@@ -48,7 +48,7 @@
 }
 
 .filter-icon{
-    padding-left: 9px;
+    padding-left: 10px;
 }
  
 .filter-employees{
@@ -99,6 +99,33 @@
     width: 100px;
     margin: 100px 50px;
 }
+
+/* start button chat */
+.btn-chat{
+    display: flex;
+    justify-content: right;
+    width: auto;
+    height: auto;
+}
+
+.btn-chat i{
+    color: white;
+    padding: 25px;
+}
+
+.action-btn{
+    background-color: var(--secondary-color);
+    width: 80px;
+    height: 80px;
+    right: 50px;
+    bottom: 50px;
+    text-align: center;
+    border-radius: 50%;
+    position: fixed;
+}
+
+/* end button chat */
+
 
 @media screen and (max-width: 600px) {
     .list-employee-row{
