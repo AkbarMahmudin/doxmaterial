@@ -17,7 +17,6 @@ nominalInput.addEventListener('keyup', () => {
 
 btnBayar.addEventListener('click', (event) => {
     event.preventDefault();
-    alert('Pembayaran Berhasil!');
     localStorage.setItem('TOTAL_HARGA', 0);
-    history.back();
+    window.location.href = '/pages/invoice.html'
 });
