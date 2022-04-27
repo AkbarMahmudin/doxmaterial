@@ -166,6 +166,21 @@ a{
   color : var(--first-color);
 }
 
+/* Form Component */
+.form-control {
+  padding: 1rem 12px;
+  outline: none;
+  border: 1px solid #b0b0b046;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.form-control::placeholder {
+  color: #c4c4c4;
+}
+
 /* responsive desktop */
 @media screen and (min-width : 768px){
   body{
@@ -276,6 +291,53 @@ a{
   cursor: default;
 }
 
+.btn-add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+}
+
+.btn-add i {
+  margin: 3rem;
+}
+
+.btn-add:hover {
+  color: #007177;
+  transition: .5s;
+}
+
+/* komponen dropdown */
+.dropdown{
+  position: relative;
+  display: inline-block;
+  margin-right: 45px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropdown-btn {background-color: #646262;}
+
 /* komponen card */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -297,25 +359,35 @@ a{
 }
 
 .card-body {
-  padding: 1rem 1rem 1.5rem 1rem;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
 }
 
 /* komponen tabel */
-
-.table_main{
-  text-align: center;
+.table {
+  color: #444;
+  border-collapse: collapse;
   width: 100%;
+  border: 1px solid #f2f5f7;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
 
+.table thead tr th {
+  background: var(--secondary-color);
+  color: #fff;
+  font-weight: 700;
 }
-.table_main thead{
-  font-weight: bold;
-  color: var(--first-color);
-  font-size: larger; 
+
+.table, td, th {
+  padding: 8px 20px;
+  text-align: center;
+  font-size: 16px;
 }
-.table_main td{
-  font-size: larger;
-  padding: 0rem 0rem 2rem 0rem;
+
+.table tr:hover {
+  background-color: #f5f5f5;
 }
-.table_main tr,td{
-  padding: 0rem 5rem 4rem 0rem;
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

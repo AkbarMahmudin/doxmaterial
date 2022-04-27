@@ -33,7 +33,7 @@ const createMenuElement = (name, price, img) => {
 }
 
 const addToCart = (menuElement) => {
-  const cartContainer = document.getElementById('cart-container');
+  const cartContainer = document.getElementsByClassName('cart-list')[0];
   const cartItem = createCartItem(menuElement['MENU_ID']);
   cartContainer.append(cartItem);
 };

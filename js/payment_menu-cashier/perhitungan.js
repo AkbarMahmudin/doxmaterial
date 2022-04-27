@@ -7,12 +7,17 @@ nominalInput.addEventListener('keyup', () => {
     const nominal = document.getElementById('nominal').value;
     const kembalian = parseInt(nominal) - parseInt(total.innerText);
 
+    
     if (kembalian > 0) {
         btnBayar.removeAttribute('disabled');
     } else {
         btnBayar.setAttribute('disabled', true);
     }
     document.getElementById('kembalian').innerText = kembalian;
+    
+    if (isNaN(document.getElementById('kembalian').innerText)) {
+        document.getElementById('kembalian').innerText = '0';
+    }
 });
 
 btnBayar.addEventListener('click', (event) => {

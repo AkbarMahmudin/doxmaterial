@@ -38,7 +38,7 @@ $('.pagination li').on('click',function(){
 })
 
 $(function() {
-    $('table tr:eq(0)').prepend('<td>Nomor</td>')
+    $('table tr:eq(0)').prepend('<th>Nomor</th>')
     var id = 0;
     $('table tr:gt(0)').each(function(){
         id++

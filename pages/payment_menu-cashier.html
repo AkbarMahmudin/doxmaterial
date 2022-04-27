@@ -85,7 +85,7 @@
       <!-- Coding disini -->
       <div class="card">
         <form id="bayar" action="">
-          <div class="title_card">
+          <div class="card-body">
             <h1>Pembayaran</h1>
 
             <div class="label-struck">
@@ -93,70 +93,58 @@
                 <h2>Total Bayar</h2>
                 <p id="total"></p>
               </div>
-              <hr style="border: 1px solid #c4c4c4" />
-
+              <hr style="border: 1px solid #c4c4c4; margin-bottom: 1.5rem;" />
 
               <div class="option-payment">
-                <div class="option-paid">
-                  <label>Pilih Metode Pembayaran E-Wallet</label>
-                  <div class="wallet">
-                    <select class="e-wallet" name="e-wallet">
+
+                <div id="wallet">
+                  <label>E-Wallet</label>
+                  <div class="grid-container">
+                    <select class="form-control" name="e-wallet">
                       <option value="gopay">Gopay</option>
                       <option value="ovo">OVO</option>
                       <option value="shopeepay">ShopeePay</option>
                     </select>
-                    <div class="e-wallet-no">
-                      <input type="text" placeholder="Nomor Telepon" />
+                    <input type="text" class="form-control" name="no-e-wallet" placeholder="Nomor Telepon" />
+                  </div>
+                </div>
+                
+                <div id="bank">
+                  <label>Rekening</label>
+                  <div class="grid-container">
+                    <select class="form-control">
+                      <option>Bank BRI</option>
+                      <option>Bank BNI</option>
+                      <option>Bank BCA</option>
+                    </select>
+                    <div class="rekening-bank">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="Nomor Rekening (XXXX-XXXX-XXXX)"
+                      />
                     </div>
                   </div>
+                </div>
 
-                  <hr style="border: 1px solid #c4c4c4" />
-
-                  <div class="card-label">
-                    <label>Pilih Metode Pembayaran Card</label>
-                    <span class="bank">
-                      <select class="transfer-bank">
-                        <option>Bank BRI</option>
-                        <option>Bank BNI</option>
-                        <option>Bank BCA</option>
-                      </select>
-                      <div class="rekening-bank">
-                        <input
-                          type="text"
-                          placeholder="Nomor Rekening (XXXX-XXXX-XXXX)"
-                        />
-                      </div>
-                    </span>
+                <div id="cash">
+                  <div class="payment-total">
+                    <label>Cash</label>
+                    <input
+                      type="text"
+                      placeholder="Nominal"
+                      name="nominal"
+                      class="form-control"
+                      id="nominal"
+                    />
                   </div>
-
-                  <hr style="border: 1px solid #c4c4c4" />
-
-                  <div class="btn-confirm">
-                    <button
-                      class="btn btn-primary btn-block"
-                      style="margin-bottom: 10px"
-                    >
-                      Konfirmasi
-                    </button>
+    
+                  <div class="kembali-label">
+                    <h4>Kembalian</h4>
+                    <p id="kembalian">0</p>
                   </div>
                 </div>
-              </div>
 
-              <div class="payment-total">
-                <label>Jumlah Bayar</label>
-                <div class="input-search">
-                  <input
-                    type="text"
-                    placeholder="Nominal"
-                    name="nominal"
-                    id="nominal"
-                  />
-                </div>
-              </div>
-
-              <div class="kembali-label">
-                <h4>Kembalian</h4>
-                <p id="kembalian"></p>
               </div>
 
               <button

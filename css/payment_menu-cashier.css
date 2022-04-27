@@ -10,34 +10,12 @@
     cursor: default;
 }
 
-.title_card {
-    padding: 2rem;
-}
-
-.title_card h1 {
-    font-weight: 500;
-}
-
-.payment-total {
-    margin-top: 1.5rem;
-}
-
 label {
     font-weight: 500;
 }
 
 input[type="text"]::placeholder {
     color: #c4c4c4;
-}
-
-input[type="text"]{
-    height: 50px;
-    padding: .5rem 12px;
-    outline: none;
-    border: 1px solid #b0b0b046;
-    border-radius: 5px;
-    inline-size: 100%;
-    width: 300px;
 }
 
 .input-search hr {
@@ -70,59 +48,27 @@ input[type="text"]{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: .5rem;
 }
 
 .kembali-label p {
+    font-size: 22px;
     color: #c4c4c4;
 }
 
 .kembali-label h4 {
+    font-size: 22px;
     font-weight: 500;
 }
 
-.e-wallet {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    border: 1px solid #b0b0b046;
-    border-radius: 5px;
-    inline-size: 50%;
+.grid-container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    gap: 10px;
 }
 
-.wallet {
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-.e-wallet-no {
-    inline-size: 100%;
-}
-
-.bank {
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-.transfer-bank {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    border: 1px solid #b0b0b046;
-    border-radius: 5px;
-    inline-size: 50%;
-}
-
-.rekening-bank {
-    inline-size: 100%;
-}
-
-.btn-confirm {
+.option-payment {
     margin-bottom: 2rem;
-    margin-top: 2rem;
-}
-
-.card-label {
-    margin-top: 1rem;
 }
 
 @media screen and (max-width: 600px) {
