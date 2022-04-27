@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="../css/index.css">
   <!-- Custom Style -->
   <link rel="stylesheet" href="../css/orders.css">
-
+  
+  
 </head>
 <body id="body-pd">
 
@@ -121,13 +122,22 @@
         
 
             <!-- orders table -->
+            <h4>Select Number Of Row</h4>
+            <div class="form-group">
+              <select name="state" id="maxRows"class="form-control"style="width:150px">
+                  <option value="5000">Show All</option>
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                  <option value="50">50</option>
+                  <option value="100">100</option>
+              </select>
+            </div>
             <div class="container_table">
                 <h2>Recent Orders</h2>
-                <table class="table_main" border="0px">
+                <table class="table table_main"id="pager" border="0px">
                 <thead>
-                    <tr>
-                        <td colspan="6" class="border-thead"></td>
-                    </tr>
                     <tr>
                         <td>Menu</td>
                         <td>ID</td>
@@ -136,11 +146,9 @@
                         <td>Total</td>
                         <td>Date</td>
                     </tr>
-                    <tr>
-                        <td colspan="6" class="border-thead"></td>
-                    </tr>
                 </thead>
-    
+
+                <tbody>
                 <tr>
                     <td>Hamburger</td>
                     <td>DC - 01012205</td>
@@ -185,22 +193,92 @@
                     <td>90.000</td>
                     <td>26 March 2022</td>
                 </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td>26 March 2022</td>
+                </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td>26 March 2022</td>
+                </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td>26 March 2022</td>
+                </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td>26 March 2022</td>
+                </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td>26 March 2022</td>
+                </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td>26 March 2022</td>
+                </tr>
+                <tr>
+                    <td>Hamburger</td>
+                    <td>DC - 01012201</td>
+                    <td>45.000</td>
+                    <td>2</td>
+                    <td>90.000</td>
+                    <td>26 March 2022</td>
+                </tr>
+              </tbody>
                 </table>
+
+                
                 <!-- end container table -->
+            </div>
+            <div class="pagination-container">
+              <nav>
+                <ul class="pagination"></ul>
+              </nav>
             </div>
         <!-- end container orders -->
         </div>
-
     </main>
     <!-- End Content Body -->
 
     <!-- Import JS -->
+    
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/94fce472e4.js" crossorigin="anonymous"></script>
     <!-- Default js -->
     <script src="../js/index.js"></script>
     <!-- Custom js -->
     <script src="../js/custom.js"></script>
+    <!-- Paginate -->
+    <script src="../js/orders/paginate.js"></script>
     
+
+
 </body>
 
 </html>
