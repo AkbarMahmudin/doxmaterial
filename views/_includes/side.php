@@ -49,7 +49,7 @@
               <i class="fa-solid fa-pen-to-square nav_icon"></i>
               <span class="nav_name">Orders</span>
             </a>
-            <a href="../../views/employee" class="nav_link
+            <a href="../../views/employees" class="nav_link
             <?= strpos($_SERVER['REQUEST_URI'], 'employees') !== false ? 'active' : '' ?>
             ">
               <i class="fa-solid fa-user-group nav_icon"></i>
