@@ -1,13 +1,9 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOX CAFFE | PoS</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/index.css">
+    <?php
+    include '_includes/header.php';
+    ?>
     <link rel="stylesheet" href="../css/login.css">
-    <link rel="icon" href="../img/logo.png"type = "image/x-icon">
 </head>
 <body>
     <div class="split-screen">
@@ -25,7 +21,7 @@
                     <input type="password" placeholder="Your Password">
                 </div>
                 <div class="input-container password">
-                    <a href="/" class="btn btn-block btn-primary uppercase">Login</a>
+                    <a href="../index.php" class="btn btn-block btn-primary uppercase">Login</a>
                 </div>
             </form>
         </div>

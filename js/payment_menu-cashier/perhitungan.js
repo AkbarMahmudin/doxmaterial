@@ -23,5 +23,5 @@ nominalInput.addEventListener('keyup', () => {
 btnBayar.addEventListener('click', (event) => {
     event.preventDefault();
     localStorage.setItem('TOTAL_HARGA', 0);
-    window.location.href = '/pages/invoice.html'
+    window.location.href = 'invoice.php';
 });

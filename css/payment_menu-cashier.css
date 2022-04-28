@@ -1,9 +1,3 @@
-.payment_menu-cashier {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
 .card {
     width: 100%;
     height: fit-content;   
@@ -69,10 +63,4 @@ input[type="text"]::placeholder {
 
 .option-payment {
     margin-bottom: 2rem;
-}
-
-@media screen and (max-width: 600px) {
-    .payment_menu-cashier {
-        margin-left: auto;
-    }
 }

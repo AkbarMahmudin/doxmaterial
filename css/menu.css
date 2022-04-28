@@ -47,8 +47,13 @@
 }
 
 .price {
-  color: #999999;
+  color: var(--secondary-color);
   font-weight: 500;
+}
+
+.stock {
+  margin-top: .5rem;
+  color: #999999;
 }
 
 /* responsive desktop */
@@ -65,6 +70,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1em;
+    padding-bottom: 2rem;
   }
 
   .card {

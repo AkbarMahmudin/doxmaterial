@@ -1,7 +1,7 @@
 const renderMenu = () => {
   const content = document.getElementById('content');
   for (const menu of menus) {
-    const menuElement = createMenuElement(menu.name, menu.price, `../img/menu/${menu.id}.png`);
+    const menuElement = createMenuElement(menu.name, menu.price, `../../img/menu/${menu.id}.png`);
     menuElement['MENU_ID'] = menu.id;
     content.append(menuElement);
   };
@@ -17,7 +17,8 @@ const createMenuElement = (name, price, img) => {
   cardBody.classList.add('card-body');
   cardBody.innerHTML = `
   <h2>${name}</h2>
-  <h4 class="price">Rp. ${price}</h4>`;
+  <h4 class="price">Rp. ${price}</h4>
+  <p class="stock">Stok: 5</p>`;
   
   card.addEventListener('click', () => {
     const cartIsDuplicate = checkCartDuplicate(card);
@@ -44,7 +45,7 @@ const createCartItem = (menuId) => {
   const cartItem = document.createElement('div');
   cartItem.classList.add('cart-item');
   const image = document.createElement('img');
-  image.setAttribute('src', `../img/menu/${menuFiltered.id}.png`);
+  image.setAttribute('src', `../../img/menu/${menuFiltered.id}.png`);
   const menuName = document.createElement('h3');
   menuName.innerText = menuFiltered.name;
   const menuPrice = document.createElement('p');
@@ -124,7 +125,6 @@ const getTotalHarga = (value) => {
   totalHargaElm.innerText = value;
   if (totalHargaElm.innerText > 0) {
     buttonNext.removeAttribute('disabled');
-    buttonNext.addEventListener('click', () => window.location.href = '/pages/payment_menu-cashier.html');
   } else {
     buttonNext.setAttribute('disabled', true);
   }
