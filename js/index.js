@@ -1,3 +1,5 @@
+
+
 // hide Side Bar
 const hideSide = (toggleId, navId, bodyId) =>{
     // ambil id
@@ -18,3 +20,30 @@ const hideSide = (toggleId, navId, bodyId) =>{
 }
 // input ke parameter by id
 hideSide('header-toggle','side-bar','body-pd')
+
+// preview image
+const fileInput = document.getElementById("inputFile");
+const ImageInput = document.getElementById("imagePreview");
+const previewImage = ImageInput.querySelector(".image_preview");
+const TextPreview = ImageInput.querySelector(".image-preview_text");
+
+fileInput.addEventListener("change", function() {
+    const file = this.files[0];
+    if(file){
+        const reader = new FileReader();
+
+        TextPreview.style.display = "none";
+        previewImage.style.display = "block";
+
+        reader.addEventListener("load", function(){
+            previewImage.setAttribute("src", this.result);
+        });
+
+        reader.readAsDataURL(file);
+    } 
+    else {
+        TextPreview.style.display = null;
+        previewImage.style.display = null;
+        previewImage.setAttribute("src", "");
+    }
+})

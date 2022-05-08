@@ -30,11 +30,13 @@
         </section>
 
         <section class="content">
-          <div class="card btn-add">
+         
+          <a class="card btn-add" href="add-barang.php">
             <i class="fa-solid fa-circle-plus"></i>
             <!-- <div class="card-body">
             </div> -->
-          </div>
+          </a>
+         
           
           <article class="card">
             <img src="../../img/menu/1.png" alt="" class="img-card">
