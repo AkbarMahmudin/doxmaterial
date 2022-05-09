@@ -44,11 +44,11 @@
 
       <!-- start wrap list employees -->
       <div class="list-employee">
-        <div class="card btn-add">
+        <a href="add-employees.php" class="card btn-add">
           <i class="fa-solid fa-circle-plus"></i>
           <!-- <div class="card-body">
               </div> -->
-        </div>
+        </a>
 
         <!-- Employee pertama -->
         <div class="card">

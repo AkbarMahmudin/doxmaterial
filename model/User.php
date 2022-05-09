@@ -1,6 +1,6 @@
 <?php
 
-include dirname(__DIR__).'/config/db.php';
+include dirname(__DIR__) . '/config/db.php';
 
 function login($username, $password)
 {
@@ -10,8 +10,8 @@ function login($username, $password)
   return mysqli_num_rows($result) > 0
     ? mysqli_fetch_assoc($result)
     : false;
-  }
-  
+}
+
 function getUserById($id)
 {
   $query = "SELECT id, username, role FROM users WHERE id = '$id'";
