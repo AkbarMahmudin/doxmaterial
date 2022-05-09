@@ -25,12 +25,11 @@
       <!-- baris pertama outlets -->
       <div class="list-outlet">
         <!-- outlet tambahan -->
-        <div class="card btn-add">
+        <a href='add-outlets.php' class="card btn-add">
           <i class="fa-solid fa-circle-plus"></i>
           <!-- <div class="card-body">
                     </div> -->
-        </div>
-
+        </a>
         <!-- outlet pertama -->
         <div class="card">
           <img src="../../img/outlets_img/outlet-1.png" alt="Outlet 1" class="img-card">
