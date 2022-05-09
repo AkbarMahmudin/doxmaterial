@@ -10,7 +10,7 @@ if (isset($_COOKIE['userId'])) {
 } else {
   if (!isset($_SESSION['login'])) {
     header('location: ../login.php');
-    exit();
+    exit;
   }
   $user = getUserById($_SESSION['userId']);
 }
