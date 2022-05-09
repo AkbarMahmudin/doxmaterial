@@ -1,9 +1,18 @@
 <?php
-// Cek login
+
+include '../../model/User.php';
+
 session_start();
-if (!isset($_SESSION['login'])) {
-  header('location: ../login.php');
-  return;
+
+// Cek session dan cookie
+if (isset($_COOKIE['userId'])) {
+  $user = getUserById($_COOKIE['userId']);
+} else {
+  if (!isset($_SESSION['login'])) {
+    header('location: ../login.php');
+    exit();
+  }
+  $user = getUserById($_SESSION['userId']);
 }
 ?>
 

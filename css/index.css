@@ -214,6 +214,7 @@ a{
   transition: .5s;
   cursor: pointer;
   text-align: center;
+  height: max-content;
 }
 
 .btn-block {
@@ -231,6 +232,12 @@ a{
   background-color: #00a2aa;
 }
 
+.btn-primary:disabled{
+  color: var(--first-color);
+  background-color: #E0E0E0;
+  cursor: default;
+}
+
 .btn-secondary{
   color: #F2F2F2;
   background-color: var(--first-color);
@@ -241,10 +248,14 @@ a{
   color: #F2F2F2;
 }
 
-.btn-primary:disabled{
-  color: var(--first-color);
-  background-color: #E0E0E0;
-  cursor: default;
+.btn-danger {
+  color: #F2F2F2;
+  background-color: #af0000;
+}
+
+.btn-danger:hover {
+  color: #F2F2F2;
+  background-color: #c40303;
 }
 
 .btn-add {
@@ -338,6 +349,12 @@ a{
   padding: 8px 20px;
   text-align: center;
   font-size: 16px;
+}
+
+.table .col-action {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .table tr:hover {

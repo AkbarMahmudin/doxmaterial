@@ -15,7 +15,7 @@
         <div class="padding-list">
           <div class="side-outlet">Jl. Buahbatu, Kec. Bandung</div>
           <div class="nav_list">
-            <?php if ($_SESSION['role'] === 'admin') : ?>
+            <?php if ($user['role'] === 'admin') : ?>
 
               <a href="../../views/dashboard" class="nav_link
               <?= strpos($_SERVER['REQUEST_URI'], 'dashboard') !== false ? 'active' : '' ?>
@@ -23,11 +23,11 @@
                 <i class="fa-solid fa-chart-simple nav_icon"></i>
                 <span class="nav_name">Dashboard</span>
               </a>
-              <a href="../../views/menus" class="nav_link
-              <?= strpos($_SERVER['REQUEST_URI'], 'menus') !== false ? 'active' : '' ?>
+              <a href="../../views/barang" class="nav_link
+              <?= strpos($_SERVER['REQUEST_URI'], 'barang') !== false ? 'active' : '' ?>
               ">
-                <i class="fa-solid fa-utensils nav_icon"></i>
-                <span class="nav_name">Menus</span>
+              <i class="fa-solid fa-warehouse nav_icon"></i>
+                <span class="nav_name">Barang</span>
               </a>
               <a href="../../views/outlets" class="nav_link
               <?= strpos($_SERVER['REQUEST_URI'], 'outlets') !== false ? 'active' : '' ?>
@@ -44,7 +44,7 @@
 
             <?php endif; ?>
 
-            <?php if ($_SESSION['role'] === 'cashier') : ?>
+            <?php if ($user['role'] === 'cashier') : ?>
 
               <a href="../../views/menu-cashier" class="nav_link
             <?=
@@ -59,6 +59,12 @@
 
             <?php endif; ?>
 
+            <a href="../../views/members" class="nav_link
+              <?= strpos($_SERVER['REQUEST_URI'], 'members') !== false ? 'active' : '' ?>
+              ">
+              <i class="fa-solid fa-address-card nav_icon"></i>
+              <span class="nav_name">Members</span>
+            </a>
             <a href="../../views/orders" class="nav_link
               <?= strpos($_SERVER['REQUEST_URI'], 'orders') !== false ? 'active' : '' ?>
               ">
@@ -71,8 +77,8 @@
       <div class="nav_bottom">
         <div class="nav_bottom-profil">
           <img src="../../img/profil.png" alt="Foto Profil" class="profil_image" />
-           <span class="profil_name"><?= $_SESSION['username']; ?><br />
-            <span class="profil_role"><?= $_SESSION['role']; ?></span></span>
+           <span class="profil_name"><?= $user['username']; ?><br />
+            <span class="profil_role"><?= $user['role']; ?></span></span>
           <form action="../../controller/users/logout.php" method="post">
             <button type="submit" class="btn-logout nav_bottom-link fa-solid fa-right-from-bracket" title="Logout"></button>
           </form>

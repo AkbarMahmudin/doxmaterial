@@ -3,7 +3,7 @@
 session_start();
 
 // Cek login
-if (isset($_SESSION['login'])) {
+if (isset($_SESSION['login']) || isset($_COOKIE['userId'])) {
   header('location: ../index.php');
   return;
 }
@@ -38,6 +38,12 @@ if (isset($_SESSION['login'])) {
                     <label for="username">Password</label>
                     <input type="password" placeholder="Your Password" name="password" required>
                 </div>
+                <div class="input-container" style="margin-bottom: 14px;">
+                    <label for="remember">
+                        <input type="checkbox" name="remember" id="remember">
+                        Ingat saya
+                    </label>
+                </div>
                 <div class="input-container password">
                     <button type="submit" class="btn btn-block btn-primary uppercase">Login</button>
                 </div>
@@ -51,7 +57,7 @@ if (isset($_SESSION['login'])) {
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <?php if (isset($_GET['error'])): ?>
+    <?php if (isset($_GET['error']) && $_GET['error']): ?>
         <script>
             Swal.fire({
                 icon: 'error',

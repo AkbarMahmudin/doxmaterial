@@ -20,8 +20,12 @@ if (!$user) {
 
 session_start();
 
-$_SESSION['username'] = $user['username'];
+$_SESSION['userId'] = $user['id'];
 $_SESSION['role'] = $user['role'];
 $_SESSION['login'] = true;
+
+if (isset($_POST['remember'])) {
+  $_SESSION['remember'] = true;
+}
 
 header('location: ../../index.php');

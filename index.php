@@ -2,15 +2,20 @@
 
 session_start();
 
-if (!isset($_SESSION['login'])) {
+if (!isset($_SESSION['login']) && !isset($_COOKIE['userId'])) {
   header('location: views/login.php');
   return;
 }
 
-if ($_SESSION['role'] === 'admin') {
+if (isset($_SESSION['remember']) && $_SESSION['remember'] === true) {
+  setcookie('userId', $_SESSION['userId'], time() + 5 * 24 * 60 * 60);
+  setcookie('role', $_SESSION['role'], time() + 5 * 24 * 60 * 60);
+}
+
+if ($_SESSION['role'] === 'admin' || $_COOKIE['role'] === 'admin') {
   header('location: views/dashboard');
 }
 
-if ($_SESSION['role'] === 'cashier') {
+if ($_SESSION['role'] === 'cashier' || $_COOKIE['role'] === 'cashier') {
   header('location: views/menu-cashier');
 }
