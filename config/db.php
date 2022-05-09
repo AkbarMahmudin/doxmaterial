@@ -5,4 +5,5 @@
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    define('DB', $connect);
+    // define('DB', $connect);
+    $GLOBALS['DB'] = $connect;
