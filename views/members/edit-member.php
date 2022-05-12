@@ -20,7 +20,7 @@
     <!-- Coding disini -->
     <!-- start container orders -->
     <div class="container">
-      <h1>Member Baru</h1>
+      <h1>Ubah Member</h1>
     
       <form action="" class="form">
         <label for="nama">Nama</label>

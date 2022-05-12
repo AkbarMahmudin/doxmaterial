@@ -17,8 +17,10 @@
 
     <!-- Content Boody -->
     <main class="container">
+      <h1>Ubah Barang</h1>
+
       <!-- Coding disini -->
-      <form action=""method=""> 
+      <form action="" method="" class="form"> 
       <label for="nama"> Nama Barang </label>
       <input type="text" name="nama" id="nama"class="form-control" required /> 
 
@@ -36,7 +38,8 @@
           <span class="image-preview_text">Image Preview</span>
       </div>
 
-      <button type="submit" class="btn btn-primary btn-block"style="margin-top:10px">Tambah</button>
+      <button type="button" class="btn" onclick="history.back()">Batal</button>
+      <button type="submit" class="btn btn-primary">Simpan</button>
 
       </form>
     </main>

@@ -38,48 +38,11 @@
           </a>
          
           
-          <article class="card">
+          <article class="card hover">
             <img src="../../img/menu/1.png" alt="" class="img-card">
             <div class="card-body">
               <h2>Hamburger</h2>
               <h4 class="price">Rp. 45.000</h4>
-              <p class="stock">Stok: 5</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="../../img/menu/2.png" alt="" class="img-card">
-            <div class="card-body">
-              <h2>Toast</h2>
-              <h4 class="price">Rp. 35.000</h4>
-              <p class="stock">Stok: 5</p>
-            </div>
-          </article>
-          
-          <article class="card">
-            <img src="../../img/menu/3.png" alt="" class="img-card">
-            <div class="card-body">
-              <h2>Pizza</h2>
-              <h4 class="price">Rp. 100.000</h4>
-              <p class="stock">Stok: 5</p>
-            </div>
-          </article>
-          
-          <article class="card">
-            <img src="../../img/menu/4.png" alt="" class="img-card">
-            <div class="card-body">
-              <h2>Steak</h2>
-              <h4 class="price">Rp. 150.000</h4>
-              <p class="stock">Stok: 5</p>
-            </div>
-          </article>
-
-          <article class="card">
-            <img src="../../img/menu/5.png" alt="" class="img-card">
-            <div class="card-body">
-              <h2>Iced Coffe</h2>
-              <h4 class="price">Rp. 30.000</h4>
-              <p class="stock">Stok: 5</p>
             </div>
           </article>
         </section>

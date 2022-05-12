@@ -33,13 +33,13 @@
               <?= strpos($_SERVER['REQUEST_URI'], 'outlets') !== false ? 'active' : '' ?>
               ">
                 <i class="fa-solid fa-shop nav_icon"></i>
-                <span class="nav_name">Outlets</span>
+                <span class="nav_name">Outlet</span>
               </a>
               <a href="../../views/employees" class="nav_link
               <?= strpos($_SERVER['REQUEST_URI'], 'employees') !== false ? 'active' : '' ?>
               ">
                 <i class="fa-solid fa-user-group nav_icon"></i>
-                <span class="nav_name">Employees</span>
+                <span class="nav_name">Pegawai</span>
               </a>
 
             <?php endif; ?>
@@ -54,7 +54,7 @@
                 ? 'active' : '' ?>
             ">
                 <i class="fa-solid fa-utensils nav_icon"></i>
-                <span class="nav_name">Menus</span>
+                <span class="nav_name">Menu</span>
               </a>
 
             <?php endif; ?>
@@ -63,13 +63,13 @@
               <?= strpos($_SERVER['REQUEST_URI'], 'members') !== false ? 'active' : '' ?>
               ">
               <i class="fa-solid fa-address-card nav_icon"></i>
-              <span class="nav_name">Members</span>
+              <span class="nav_name">Member</span>
             </a>
             <a href="../../views/orders" class="nav_link
               <?= strpos($_SERVER['REQUEST_URI'], 'orders') !== false ? 'active' : '' ?>
               ">
               <i class="fa-solid fa-pen-to-square nav_icon"></i>
-              <span class="nav_name">Orders</span>
+              <span class="nav_name">Order</span>
             </a>
           </div>
         </div>

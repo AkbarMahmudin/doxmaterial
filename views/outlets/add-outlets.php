@@ -22,17 +22,24 @@
     <!-- Coding disini -->
     <div class="container">
       <!-- start add outlets -->
-      <h1>Add Outlets</h1>
-      <form action="">
+      <h1>Outlet Baru</h1>
+
+      <form action="" class="form">
         <label> Kota </label>
         <input type="text" name="kota" id="" class="form-control" />
         <label> Alamat </label>
-        <input type="text" name="alamat" id="" class="form-control" />
+        <textarea name="alamat" id="alamat" cols="30" rows="10" class="form-control"></textarea>
         <label> Gambar </label>
-        <input type="file" name="gambar" id="" class="form-control" />
+        <input type="file" name="gambar" id="inputFile" class="form-control" />
+        <div class="image-preview" id="imagePreview">
+          <img class="image_preview" src="" alt="Image Preview" />
+          <span class="image-preview_text">Image Preview</span>
+        </div>
+
+        <button type="button" class="btn" onclick="history.back()">Batal</button>
+        <button type="submit" class="btn btn-primary">Simpan</button>
       </form>
     </div>
-    <a href="index.php"><button class="btn btn-primary">Add</button></a>
 
     <!-- end container add outlets -->
   </main>
