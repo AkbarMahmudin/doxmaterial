@@ -47,3 +47,4 @@ fileInput.addEventListener("change", function() {
         previewImage.setAttribute("src", "");
     }
 })
+
