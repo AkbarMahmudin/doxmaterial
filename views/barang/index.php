@@ -13,6 +13,9 @@
 <?php
   // $title = 'Menu';
   include '../_includes/side.php';
+
+  // include view
+  include '../../controller/barang/view.php';
 ?>
 
     <!-- Content Boody -->
@@ -37,14 +40,19 @@
             </div> -->
           </a>
          
-          
+          <?php 
+          // foreach
+          foreach($datas as $row){ 
+          ?>
           <article class="card hover">
-            <img src="../../img/menu/1.png" alt="" class="img-card">
+            <img src="gambar/<?= $row['gambar']; ?>" alt="" class="img-card">
             <div class="card-body">
-              <h2>Hamburger</h2>
-              <h4 class="price">Rp. 45.000</h4>
+              <h2><?= $row['nama']; ?></h2>
+              <h4 class="price">Rp. <?= $row['harga']; ?></h4>
             </div>
           </article>
+          <?php 
+          } ?>
         </section>
       </div>
     </main>
@@ -54,7 +62,16 @@
     <?php
       include '../_includes/footer.php';
     ?>
-
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php if (isset($_GET['pesan']) && $_GET['pesan'] == 'success'): ?>
+    <script>
+        Swal.fire({
+        icon: 'success',
+        title: 'Berhasil',
+        text: 'Data Baru udah Ditambah!',
+    })
+</script>
+    <?php endif; ?>
 </body>
 
 </html>

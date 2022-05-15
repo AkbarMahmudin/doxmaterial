@@ -49,7 +49,7 @@
       <!-- end wrap button filter dan date-->
 
       <!-- orders table -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <select name="state" id="maxRows" class="form-control" style="width: 150px">
           <option value="5000">Show All</option>
           <option value="5">5</option>
@@ -59,9 +59,9 @@
           <option value="50">50</option>
           <option value="100">100</option>
         </select>
-      </div>
+      </div> -->
       <div class="container_table">
-        <table class="table" id="pager">
+        <table class="table" id="myTable">
           <thead>
             <tr>
               <th>Menu</th>
@@ -179,11 +179,11 @@
 
         <!-- end container table -->
       </div>
-      <div class="pagination-container">
+      <!-- <div class="pagination-container">
         <nav>
           <ul class="pagination"></ul>
         </nav>
-      </div>
+      </div> -->
       <!-- end container orders -->
     </div>
   </main>
@@ -192,12 +192,13 @@
   <!-- Import JS -->
 
   <!-- Jquery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+  
   <?php
     include '../_includes/footer.php';
   ?>
   <!-- Paginate -->
-  <script src="../../js/orders/paginate.js"></script>
+  <!-- <script src="../../js/orders/paginate.js"></script> -->
+  <script src="../../js/datatable.js"></script>
 </body>
 
 </html>

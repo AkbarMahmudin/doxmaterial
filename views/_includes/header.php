@@ -24,3 +24,4 @@ if (isset($_COOKIE['userId'])) {
 <!-- Default style -->
 <link rel="stylesheet" href="../../css/index.css">
 <link rel="icon" href="../../img/logo.png"type = "image/x-icon">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/jquery.dataTables.min.css">

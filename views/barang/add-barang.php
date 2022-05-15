@@ -13,6 +13,9 @@
 <?php
   // $title = 'Menu';
   include '../_includes/side.php';
+
+  // include getkodebarang dari controller
+  include '../../controller/barang/store.php';
 ?>
 
     <!-- Content Boody -->
@@ -20,15 +23,17 @@
       <!-- Coding disini -->
       <h1>Barang Baru</h1>
 
-      <form action="" method="" class="form"> 
+      <form action="../../controller/barang/store.php" method="POST" class="form" enctype="multipart/form-data"> 
+
+      <label for="nama"> ID Barang </label>
+      <input type="text" name="id" class="form-control" value="<?php echo $kodeBarang ?>" readonly /> 
+      <!-- <input type="text" name="id" class="form-control" value=""  />  -->
+
       <label for="nama"> Nama Barang </label>
       <input type="text" name="nama" id="nama"class="form-control" required /> 
 
       <label for="harga"> Harga </label>
       <input type="number" name="harga" id="harga" class="form-control" required />
-
-      <label for="stok"> Stok </label>
-      <input type="number" name="stok" id="stok" class="form-control" required />
 
       <label for="GambarBarang"> Gambar Barang</label>
       <input type="file" name="gambar" id="inputFile" class="form-control"required />
@@ -50,7 +55,16 @@
       include '../_includes/footer.php';
     ?>
 
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php if (isset($_GET['pesan']) && $_GET['pesan'] == 'fail'): ?>
+    <script>
+        Swal.fire({
+        icon: 'error',
+        title: 'Fail',
+        text: 'Ekstensi yang Diperbolehkan Hanya (JPG, PNG, JPEG)!',
+    })
+    </script>
+    <?php endif; ?>
 </body>
 
 </html>
