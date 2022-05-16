@@ -45,7 +45,7 @@
           foreach($datas as $row){ 
           ?>
           <article class="card hover">
-            <img src="gambar/<?= $row['gambar']; ?>" alt="" class="img-card">
+            <img src="<?= !$row['gambar'] ? '../../img/no-img.jpg' : 'gambar/'.$row['gambar']; ?>" alt="" class="img-card">
             <div class="card-body">
               <h2><?= $row['nama']; ?></h2>
               <h4 class="price">Rp. <?= $row['harga']; ?></h4>
