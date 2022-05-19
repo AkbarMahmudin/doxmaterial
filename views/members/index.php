@@ -1,3 +1,7 @@
+<?php
+  include '../../controller/members/getMembers.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,22 +22,11 @@
     <!-- start container members -->
     <div class="container">
       <!-- members table -->
-      <div class="form-group">
-        <select name="state" id="maxRows" class="form-control" style="width: 150px">
-          <option value="5000">Show All</option>
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
-      </div>
-
       <div class="container_table">
-        <table class="table" id="pager">
+        <table class="table" id="myTable" width="100%">
           <thead>
             <tr>
+              <th>No</th>
               <th>Nama</th>
               <th>Jenis Kelamin</th>
               <th>Telepon</th>
@@ -41,47 +34,53 @@
               <th>Action</th>
             </tr>
           </thead>
-
+  
           <tbody>
+            <?php foreach($members as $key => $member) : ?>
             <tr>
-              <td>Jhon Doe</td>
-              <td>L</td>
-              <td>62888888889</td>
-              <td>Jl. Kaki</td>
-              <td class="col-action">
-                <a href="#" class="btn btn-secondary" style="margin: 2px;">Edit</a>
-                <a href="#" class="btn btn-danger" style="margin: 2px;">Hapus</a>
+              <td><?= $key + 1 ?></td>
+              <td>
+                <a href="detail-member.php?id=<?= $member['id']; ?>">
+                  <?= $member['nama_lengkap']; ?></td>
+                </a>
+              <td><?= $member['jenis_kelamin']; ?></td>
+              <td><?= $member['telepon']; ?></td>
+              <td><?= $member['alamat']; ?></td>
+              <td style="text-align: center;">
+                <!-- 
+                  link edit agar mendapatkan data member berdasarkan id 
+                  contoh: edit-member.php?id=MB01
+                -->
+                <a href="edit-member.php?id=<?= $member['id']; ?>" class="btn btn-secondary">Edit</a>
+                <!-- 
+                  button / form utk hapus data
+                 -->
+                <form action="../../controller/members/delete.php" method="post" style="padding: 0; margin: 0; display: inline-block;">
+                  <!-- elemen utk menampung nilai id -->
+                  <input type="hidden" name="id" value="<?= $member['id'] ?>">
+                  <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
+                <!-- <a href="#" class="btn btn-danger" style="margin: 2px;">Hapus</a> -->
               </td>
             </tr>
-
+            <?php endforeach; ?>
           </tbody>
         </table>
-
+  
+        <a href="add-member.php" class="btn btn-primary btn-block" style="margin-top: 1rem;">
+          <i class="fa-solid fa-plus"></i>  
+          Buat Member Baru
+        </a>
       </div>
-      
-      <div class="pagination-container">
-        <nav>
-          <ul class="pagination"></ul>
-        </nav>
-      </div>
-      <a href="add-member.php" class="btn btn-primary btn-block">
-        <i class="fa-solid fa-plus"></i>  
-        Buat Member Baru
-      </a>
       <!-- end container members -->
     </div>
   </main>
   <!-- End Content Body -->
 
   <!-- Import JS -->
-
-  <!-- Jquery -->
-  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
   <?php
     include '../_includes/footer.php';
   ?>
-  <!-- Paginate -->
-  <script src="../../js/orders/paginate.js"></script>
 </body>
 
 </html>

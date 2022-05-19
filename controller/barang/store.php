@@ -1,26 +1,54 @@
 <?php
-include '../../model/Barang.php';
 
-// GET KODE BARANG
-$kodeBarang = getKodeBarang();
+include '../../model/Barang.php';
+include '../../helpers/upload-image.php';
+
+session_start();
 
 // STORE
-if (!isset($_POST['id']) ) {
-    return;
-  }
-$id = $_POST['id'];
 $nama = $_POST['nama'];
 $harga = $_POST['harga'];
-$gambar = $_FILES['gambar']['name'];
-$temporary = $_FILES['gambar']['tmp_name'];
+$gambar = $_FILES['gambar'];
 
-$store = store($id, $nama, $harga, $gambar, $temporary);
+// cek gambar
+if (isset($_FILES['gambar'])) {
+  $result = upload($gambar, 'barang');
+  if ($result === 0) {
+    $response = [
+      'status' => 'error',
+      'message' => 'Pilih gambar terlebih dahulu!'
+    ];
+  } elseif ($result === -1) {
+    $response = [
+      'status' => 'error',
+      'message' => 'Ekstensi file tidak valid!'
+    ];
+  } elseif ($result === -2) {
+    $response = [
+      'status' => 'error',
+      'message' => 'Ukuran file terlalu besar!'
+    ];
+  } else {
+    $response = [
+      'status' => 'success',
+      'message' => 'file berhasil ditambahkan'
+    ];
+    $gambar = $result;
+  }
+  
+  // menampilkan notifikasi
+  $_SESSION['response'] = $response;
+}
+$newBarang = store($nama, $harga, $gambar);
 
-if (!$store){
-    header("location:../../views/barang/add-barang.php?pesan=fail");
-    return;
+if (!$newBarang){
+  $response = [
+    'status' => 'error',
+    'message' => 'Barang gagal ditambahkan!'
+  ];
+  $_SESSION['response'] = $response;
+  header("location:../../views/barang/add-barang.php");
+  return;
 }
 
-header("location:../../views/barang/index.php?pesan=success");
-
-?>
+header("location:../../views/barang/index.php");
