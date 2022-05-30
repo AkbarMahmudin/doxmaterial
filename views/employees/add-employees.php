@@ -24,25 +24,30 @@
       <!-- start add outlets -->
       <h1>Pegawai Baru</h1>
 
-      <form action="" class="form">
+      <form action="../../controller/employees/create.php" class="form" method="POST" enctype="mulipart/form-data">
         <label> Nama </label>
-        <input type="text" name="nama" id="" class="form-control" />
+        <input type="text" name="nama" id="" class="form-control" placeholder="Masukkan nama" />
+
         <label> Username </label>
-        <input type="text" name="username" id="" class="form-control" />
+        <input type="text" name="username" id="" class="form-control" placeholder="Masukkan username"/>
+
         <label> Password </label>
-        <input type="password" name="password" id="" class="form-control" />
+        <input type="password" name="password" id="" class="form-control"/>
+
         <label> Role </label>
         <select name="role" id="role" class="form-control"> 
             <option selected>Select role</option>
-            <option value="cashier">cashier</option>
+            <option value="kasir">kasir</option>
             <option value="admin">admin</option>
         </select>
-        <label> Outlet </label>
+
+        <label> Toko </label>
         <select name="outlet" id="outlet" class="form-control"> 
-            <option selected>Select outlet</option>
+            <option selected>Select toko</option>
             <option value="Bandung">Bandung</option>
             <option value="Jakarta">Jakarta</option>
         </select>
+
         <label> Gambar </label>
         <input type="file" name="gambar" id="inputFile" class="form-control" />
         <div class="image-preview" id="imagePreview">

@@ -21,3 +21,5 @@ function getUserById($id)
     ? mysqli_fetch_assoc($result)
     : false;
 }
+
+

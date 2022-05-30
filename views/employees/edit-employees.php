@@ -22,7 +22,7 @@
     <!-- Coding disini -->
     <div class="container">
       <!-- start add outlets -->
-      <h1>Ubah Pegawai</h1>
+      <h1>Edit Pegawai</h1>
 
       <form action="" class="form">
         <label> Nama </label>
