@@ -57,7 +57,7 @@ if (isset($_SESSION['login']) || isset($_COOKIE['userId'])) {
     </div>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <?php if (isset($_GET['error']) && $_GET['error']): ?>
+    <?php if (isset($_SESSION['error_login']) && $_SESSION['error_login']): ?>
         <script>
             Swal.fire({
                 icon: 'error',
@@ -65,6 +65,8 @@ if (isset($_SESSION['login']) || isset($_COOKIE['userId'])) {
                 text: 'Username/password salah!',
             })
         </script>
-    <?php endif; ?>
+    <?php
+    unset($_SESSION['error_login']);
+    endif; ?>
 </body>
 </html>

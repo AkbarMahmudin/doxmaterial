@@ -44,7 +44,7 @@
 
             <?php endif; ?>
 
-            <?php if ($user['role'] === 'cashier') : ?>
+            <?php if ($user['role'] === 'kasir') : ?>
 
               <a href="../../views/menu-cashier" class="nav_link
             <?=
