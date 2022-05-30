@@ -36,3 +36,38 @@ function show($id) {
     ? mysqli_fetch_assoc($result)
     : false;
 }
+
+function show_stock($id){
+    $query = "SELECT s.*, o.alamat AS alamat_outlet FROM stok s INNER JOIN outlet o ON s.outlet_id = o.id WHERE s.barang_id = '$id'";
+    $result = mysqli_query($GLOBALS['DB'], $query);
+
+    $data = [];
+    while($row = mysqli_fetch_assoc($result)){
+        $data[] = $row; 
+    }
+
+    return $data;
+}
+
+function update_barang($id,$nama,$harga,$gambar = NULL){
+    $query = "UPDATE barang SET nama='$nama', harga='$harga'WHERE id='$id'";
+    if($gambar){
+        $query = "UPDATE barang SET nama='$nama', harga='$harga', gambar='$gambar'WHERE id='$id'";
+
+        mysqli_query($GLOBALS['DB'], $query);
+        return -1;
+    }
+    mysqli_query($GLOBALS['DB'], $query);
+
+    return (mysqli_affected_rows($GLOBALS['DB']) > 0)
+    ? true
+    : false;
+}
+function delete_barang($id){
+    $query = "DELETE from barang WHERE id = '$id'";
+    mysqli_query($GLOBALS['DB'], $query);
+
+    return (mysqli_affected_rows($GLOBALS['DB']) > 0)
+    ? true
+    : false;
+}
