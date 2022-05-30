@@ -24,7 +24,7 @@
       <!-- start add outlets -->
       <h1>Outlet Baru</h1>
 
-      <form action="" class="form">
+      <form action="../../controller/outlets/create.php" method="POST" class="form" enctype="mulipart/form-data">
         <label> Kota </label>
         <input type="text" name="kota" id="" class="form-control" />
         <label> Alamat </label>

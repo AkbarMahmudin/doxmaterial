@@ -1,0 +1,6 @@
+<?php
+
+include '../../model/Outlet.php';
+
+$outlets = getOutlets();
+
