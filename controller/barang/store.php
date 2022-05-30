@@ -35,9 +35,6 @@ if (isset($_FILES['gambar'])) {
     ];
     $gambar = $result;
   }
-  
-  // menampilkan notifikasi
-  $_SESSION['response'] = $response;
 }
 $newBarang = store($nama, $harga, $gambar);
 
@@ -50,5 +47,13 @@ if (!$newBarang){
   header("location:../../views/barang/add-barang.php");
   return;
 }
+
+$response = [
+  'status' => 'success',
+  'message' => 'Barang berhasil ditambahkan!'
+];
+
+// menampilkan notifikasi
+$_SESSION['response'] = $response;
 
 header("location:../../views/barang/index.php");

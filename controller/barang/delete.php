@@ -11,8 +11,11 @@ $barangDeleted = delete_barang($id);
 
 // handle error
 if (!$barangDeleted) {
-  echo 'gagal menghapus data';
-  exit;
+  $_SESSION['response'] = [
+    'status' => 'error',
+    'message' => 'Barang gagal dihapus'
+  ];
+  header('location: ../../views/barang/');
 }
 
 // redirect ke index ketika berhasil delete data
