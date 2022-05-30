@@ -60,125 +60,121 @@
           <option value="100">100</option>
         </select>
       </div> -->
-      <div class="container_table">
-        <table class="table" id="myTable">
-          <thead>
-            <tr>
-              <th>Menu</th>
-              <th>ID</th>
-              <th>Price</th>
-              <th>Qty</th>
-              <th>Total</th>
-              <th>Date</th>
-            </tr>
-          </thead>
+      <table class="table" id="myTable" width="100%">
+        <thead>
+          <tr>
+            <th>Menu</th>
+            <th>ID</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Total</th>
+            <th>Date</th>
+          </tr>
+        </thead>
 
-          <tbody>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012205</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
+        <tbody>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012205</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
 
-            <tr>
-              <td>Pizza</td>
-              <td>DC - 01012204</td>
-              <td>100.000</td>
-              <td>2</td>
-              <td>200.000</td>
-              <td>26 March 2022</td>
-            </tr>
+          <tr>
+            <td>Pizza</td>
+            <td>DC - 01012204</td>
+            <td>100.000</td>
+            <td>2</td>
+            <td>200.000</td>
+            <td>26 March 2022</td>
+          </tr>
 
-            <tr>
-              <td>Iced Coffe</td>
-              <td>DC - 01012203</td>
-              <td>30.000</td>
-              <td>2</td>
-              <td>60.000</td>
-              <td>26 March 2022</td>
-            </tr>
+          <tr>
+            <td>Iced Coffe</td>
+            <td>DC - 01012203</td>
+            <td>30.000</td>
+            <td>2</td>
+            <td>60.000</td>
+            <td>26 March 2022</td>
+          </tr>
 
-            <tr>
-              <td>Toast</td>
-              <td>DC - 01012202</td>
-              <td>35.000</td>
-              <td>2</td>
-              <td>70.000</td>
-              <td>26 March 2022</td>
-            </tr>
+          <tr>
+            <td>Toast</td>
+            <td>DC - 01012202</td>
+            <td>35.000</td>
+            <td>2</td>
+            <td>70.000</td>
+            <td>26 March 2022</td>
+          </tr>
 
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-            <tr>
-              <td>Hamburger</td>
-              <td>DC - 01012201</td>
-              <td>45.000</td>
-              <td>2</td>
-              <td>90.000</td>
-              <td>26 March 2022</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- end container table -->
-      </div>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+          <tr>
+            <td>Hamburger</td>
+            <td>DC - 01012201</td>
+            <td>45.000</td>
+            <td>2</td>
+            <td>90.000</td>
+            <td>26 March 2022</td>
+          </tr>
+        </tbody>
+      </table>
       <!-- <div class="pagination-container">
         <nav>
           <ul class="pagination"></ul>
@@ -190,15 +186,9 @@
   <!-- End Content Body -->
 
   <!-- Import JS -->
-
-  <!-- Jquery -->
-  
   <?php
     include '../_includes/footer.php';
   ?>
-  <!-- Paginate -->
-  <!-- <script src="../../js/orders/paginate.js"></script> -->
-  <script src="../../js/datatable.js"></script>
 </body>
 
 </html>

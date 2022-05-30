@@ -23,6 +23,6 @@ if ($_SESSION['role'] === 'admin' || $_COOKIE['role'] === 'admin') {
   header('location: views/dashboard');
 }
 
-if ($_SESSION['role'] === 'cashier' || $_COOKIE['role'] === 'cashier') {
+if ($_SESSION['role'] === 'kasir' || $_COOKIE['role'] === 'kasir') {
   header('location: views/menu-cashier');
 }

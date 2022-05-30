@@ -13,9 +13,6 @@
 <?php
   // $title = 'Menu';
   include '../_includes/side.php';
-
-  // include getkodebarang dari controller
-  include '../../controller/barang/store.php';
 ?>
 
     <!-- Content Boody -->
@@ -25,8 +22,8 @@
 
       <form action="../../controller/barang/store.php" method="POST" class="form" enctype="multipart/form-data"> 
 
-      <label for="nama"> ID Barang </label>
-      <input type="text" name="id" class="form-control" value="<?php echo $kodeBarang ?>" readonly /> 
+      <!-- <label for="nama"> ID Barang </label>
+      <input type="text" name="id" class="form-control" value="<?php // echo $kodeBarang ?>" readonly />  -->
       <!-- <input type="text" name="id" class="form-control" value=""  />  -->
 
       <label for="nama"> Nama Barang </label>
@@ -36,7 +33,7 @@
       <input type="number" name="harga" id="harga" class="form-control" required />
 
       <label for="GambarBarang"> Gambar Barang</label>
-      <input type="file" name="gambar" id="inputFile" class="form-control"required />
+      <input type="file" name="gambar" id="inputFile" class="form-control" required />
 
       <div class="image-preview" id="imagePreview">
           <img class="image_preview" src="" alt="Image Preview" />

@@ -1,6 +1,8 @@
 <?php
 
 include '../../model/User.php';
+
+session_start();
   
 if (!isset($_POST['username']) && !isset($_POST['password'])) {
   echo 'isi username/password';
@@ -13,8 +15,9 @@ $password = $_POST['password'];
 $user = login($username, $password);
 
 if (!$user) {
-  // echo 'username/password salah';
-  header('location: ../../views/login.php?error=true');
+  // notifikasi user salah
+  $_SESSION['error_login'] = true;
+  header('location: ../../views/login.php');
   return;
 }
 
