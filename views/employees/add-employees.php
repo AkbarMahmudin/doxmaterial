@@ -54,8 +54,8 @@
           <img class="image_preview" src="" alt="Image Preview" />
           <span class="image-preview_text">Image Preview</span>
         </div>
-        <button type="button" class="btn" onclick="history.back()">Batal</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="button" class="btn" onclick="history.back()" style="margin-right: 20px">Batal</button>
+        <button type="submit" class="btn btn-primary" >Simpan</button>
       </form>
 
     </div>

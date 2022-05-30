@@ -50,16 +50,16 @@ $pegawai = getEmployeesByID($id);
         <label> Role </label>
         <select name="role" id="role" class="form-control"> 
             <option selected>Select role</option>
-            <option value="kasir" <?= $pegawai == ['role'] ? 'selected' : '' ?>>kasir</option>
-            <option value="admin" <?= $pegawai == ['role'] ? 'selected' : '' ?>>admin</option>
+            <option value="kasir" <?= $pegawai['role'] == 'kasir' ? 'selected' : '' ?>>kasir</option>
+            <option value="admin" <?= $pegawai['role'] == 'admin' ? 'selected' : '' ?>>admin</option>
         </select>
-
+<!-- 
         <label> Outlet </label>
         <select name="outlet" id="outlet" class="form-control"> 
             <option selected>Select outlet</option>
-            <option value="Bandung" <?= $pegawai == ['outlet'] ? 'selected' : '' ?>>Bandung</option> 
-            <option value="Jakarta" <?= $pegawai == ['outlet'] ? 'selected' : '' ?>>Jakarta</option>
-        </select>
+            <option value="Bandung" <?= $pegawai['outlets'] == 'bandung' ? 'selected' : '' ?>>Bandung</option> 
+            <option value="Jakarta" <?= $pegawai['outlets'] == 'jakarta' ? 'selected' : '' ?>>Jakarta</option>
+        </select> -->
 
         <label> Gambar </label>
         <input type="file" name="gambar" id="inputFile" class="form-control" />
