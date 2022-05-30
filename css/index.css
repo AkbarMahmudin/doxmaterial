@@ -5,7 +5,7 @@
 }
 
 body {
-  font-family: 'Hind', sans-serif;
+  font-family: "Hind", sans-serif;
   transition: 0.5s;
   padding: 0 1rem 0 calc(var(--nav-width) + 1rem);
   margin: 1rem 1rem 0 0;
@@ -281,7 +281,7 @@ button.btn-secondary {
 a.btn-danger,
 button.btn-danger {
   color: #f2f2f2;
-  background-color: #E74E4E;
+  background-color: #e74e4e;
 }
 
 .btn-danger:hover {

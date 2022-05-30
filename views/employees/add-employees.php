@@ -24,7 +24,7 @@
       <!-- start add outlets -->
       <h1>Pegawai Baru</h1>
 
-      <form action="../../controller/employees/create.php" class="form" method="POST" enctype="mulipart/form-data">
+      <form action="../../controller/employees/create.php" class="form" method="POST" enctype="multipart/form-data">
         <label> Nama </label>
         <input type="text" name="nama" id="" class="form-control" placeholder="Masukkan nama" />
 
