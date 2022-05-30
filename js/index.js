@@ -29,14 +29,14 @@ if (fileInput) {
     const file = this.files[0];
     if (file) {
       const reader = new FileReader();
-  
+
       TextPreview.style.display = 'none';
       previewImage.style.display = 'block';
-  
+
       reader.addEventListener('load', function () {
         previewImage.setAttribute('src', this.result);
       });
-  
+
       reader.readAsDataURL(file);
     } else {
       TextPreview.style.display = null;
@@ -45,3 +45,33 @@ if (fileInput) {
     }
   });
 }
+
+// Sweet Alert
+const sweetAlert = (type, msg, title = '') => {
+  Swal.fire({
+    icon: type,
+    title: title,
+    text: msg,
+    confirmButtonColor: '#01adb5',
+  });
+};
+
+// Toast
+const toastAlert = (type, msg) => {
+  const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('mouseenter', Swal.stopTimer);
+      toast.addEventListener('mouseleave', Swal.resumeTimer);
+    },
+  });
+
+  Toast.fire({
+    icon: type,
+    title: msg,
+  });
+};

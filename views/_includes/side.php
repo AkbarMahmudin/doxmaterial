@@ -53,7 +53,7 @@
                 strpos($_SERVER['REQUEST_URI'], 'invoice.php') !== false
                 ? 'active' : '' ?>
             ">
-                <i class="fa-solid fa-utensils nav_icon"></i>
+                <i class="fa-solid fa-warehouse nav_icon"></i>
                 <span class="nav_name">Menu</span>
               </a>
 

@@ -36,3 +36,12 @@ function show($id) {
     ? mysqli_fetch_assoc($result)
     : false;
 }
+
+function showByStokId($stokId) {
+    $query = "SELECT b.*, s.id AS stok_id FROM barang b INNER JOIN stok s ON b.id = s.barang_id WHERE s.id = '$stokId'";
+    $result = mysqli_query($GLOBALS['DB'], $query);
+    
+    return mysqli_num_rows($result) > 0
+    ? mysqli_fetch_assoc($result)
+    : false;
+}
