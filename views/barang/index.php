@@ -44,6 +44,7 @@
           // foreach
           foreach($datas as $row){ 
           ?>
+          <a href="show-barang.php?id=<?= $row['id']; ?>" style="color: inherit;">
           <article class="card hover">
             <img src="<?= !$row['gambar'] ? '../../img/no-img.jpg' : '../../img/barang/'.$row['gambar']; ?>" alt="" class="img-card">
             <div class="card-body">
@@ -51,6 +52,7 @@
               <h4 class="price">Rp. <?= $row['harga']; ?></h4>
             </div>
           </article>
+          </a>
           <?php 
           } ?>
         </section>
