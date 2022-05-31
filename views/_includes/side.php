@@ -13,7 +13,7 @@
         </a>
 
         <div class="padding-list">
-          <div class="side-outlet">Jl. Buahbatu, Kec. Bandung</div>
+          <div class="side-outlet"><?= ($user['role'] === 'kasir') ? $user['nama_outlet'] : '' ?></div>
           <div class="nav_list">
             <?php if ($user['role'] === 'admin') : ?>
 
@@ -53,7 +53,7 @@
                 strpos($_SERVER['REQUEST_URI'], 'invoice.php') !== false
                 ? 'active' : '' ?>
             ">
-                <i class="fa-solid fa-utensils nav_icon"></i>
+                <i class="fa-solid fa-warehouse nav_icon"></i>
                 <span class="nav_name">Menu</span>
               </a>
 

@@ -192,9 +192,10 @@ a {
   margin: 1rem 0;
 }
 
-.form label {
+.form-label {
+  display: block;
   font-weight: 500;
-  margin-top: 8px 0;
+  margin-bottom: .5rem;
 }
 
 .form-control {
@@ -289,6 +290,13 @@ button.btn-danger {
   background-color: #e04242;
 }
 
+a.btn-link,
+button.btn-link {
+  color: var(--secondary-color);
+  background-color: transparent;
+  box-shadow: none;
+}
+
 .btn-add {
   display: flex;
   align-items: center;
@@ -349,6 +357,7 @@ button.btn-danger {
   border-radius: 5px;
   width: 100%;
   padding: 0;
+  margin-bottom: 1.5rem;
 }
 
 .hover:hover {
