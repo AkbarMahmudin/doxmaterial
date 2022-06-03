@@ -14,9 +14,8 @@ function login($username, $password)
 
 function getUserById($id)
 {
-  $query = "SELECT p.id, p.username, p.role, p.outlet_id, CONCAT_WS(', ', o.alamat, o.kota) AS nama_outlet FROM pegawai p 
-            INNER JOIN outlet o ON p.outlet_id = o.id 
-            WHERE p.id = '$id'";
+  $query = "SELECT id, username, role, outlet_id FROM pegawai
+            WHERE id = '$id'";
   $result = mysqli_query($GLOBALS['DB'], $query);
 
   return mysqli_num_rows($result) > 0

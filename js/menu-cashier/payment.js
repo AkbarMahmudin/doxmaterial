@@ -134,7 +134,7 @@ btnBayar.addEventListener('click', async (event) => {
   const response = await payment('Lunas');
   const result = JSON.parse(response);
   if (result.status === 'error') {
-    toastAlert(result.status, result.message);
+    return toastAlert(result.status, result.message);
   }
 
   sessionStorage.removeItem('DATA_ORDER');
@@ -161,7 +161,7 @@ btnPiutang.addEventListener('click', async (event) => {
   const result = JSON.parse(response);
 
   if (result.status === 'error') {
-    sweetAlert(result.status, result.message, 'Gagal!');
+    return sweetAlert(result.status, result.message, 'Gagal!');
   }
 
   sessionStorage.removeItem('DATA_ORDER');

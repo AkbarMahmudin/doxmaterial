@@ -13,7 +13,7 @@
         </a>
 
         <div class="padding-list">
-          <div class="side-outlet"><?= ($user['role'] === 'kasir') ? $user['nama_outlet'] : '' ?></div>
+          <div class="side-outlet"></div>
           <div class="nav_list">
             <?php if ($user['role'] === 'admin') : ?>
 
