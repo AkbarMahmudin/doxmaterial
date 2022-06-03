@@ -489,10 +489,10 @@ th {
   }
 
   .nav_logo-icon {
-    width: 90px;
-    height: 90px;
+    width: 120px;
+    height: 100px;
     transition: 0.5s;
-    margin-left: 50px;
+    margin-left: 40px;
     padding: 0rem 0rem 0rem 0rem;
   }
 
