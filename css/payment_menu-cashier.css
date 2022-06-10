@@ -1,66 +1,154 @@
 .card {
-    width: 100%;
-    height: fit-content;   
-    cursor: default;
+  width: 100%;
+  height: fit-content;
+  cursor: default;
 }
 
 label {
-    font-weight: 500;
+  font-weight: 500;
 }
 
-input[type="text"]::placeholder {
-    color: #c4c4c4;
+input[type='text']::placeholder {
+  color: #c4c4c4;
 }
 
 .input-search hr {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .label-struck {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .total-label {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .total-label p {
-    font-size: 24px;
-    color: #01adb5;
+  font-size: 24px;
+  color: #01adb5;
 }
 
 .total-label h4 {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 .kembali-label {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: .5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.5rem;
 }
 
 .kembali-label p {
-    font-size: 22px;
-    color: #c4c4c4;
+  font-size: 22px;
+  color: #c4c4c4;
 }
 
 .kembali-label h4 {
-    font-size: 22px;
-    font-weight: 500;
+  font-size: 22px;
+  font-weight: 500;
 }
 
 .grid-container {
-    display: grid;
-    grid-template-columns: 20% 80%;
-    gap: 10px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+  gap: 10px;
 }
 
 .option-payment {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
+}
+
+.container-payment {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: normal;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+.order {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  width: 70%;
+}
+
+.detail-order {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  width: 30%;
+  padding-left: 1rem;
+}
+
+.option-payment input[type="radio"] {
+  display: none;
+}
+
+.option {
+  background-color: #ffff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: .25rem 1rem;
+  border: 1px solid #b0b0b046;
+  transition: all 0.3s ease;
+  margin-right: 1rem;
+}
+
+.option span {
+  font-size: 16px;
+  color: #808080;
+}
+
+#m-e-wallet:checked:checked ~ .option-e-wallet,
+#m-rekening:checked:checked ~ .option-rekening,
+#m-cash:checked:checked ~ .option-cash {
+  border-color: var(--secondary-color);
+  background: var(--secondary-color);
+}
+
+#m-e-wallet:checked:checked ~ .option-e-wallet span,
+#m-rekening:checked:checked ~ .option-rekening span,
+#m-cash:checked:checked ~ .option-cash span {
+  color: #fff;
+}
+
+.search-input {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.suggest-box {
+  border: 1px solid #b0b0b046;
+  width: 100%;
+  position: absolute;
+  padding: .5rem;
+  top: 2.5rem;
+  border-radius: 0 0 5px 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(92, 92, 92, 0.116);
+}
+
+.suggest-box > div {
+  padding: .25rem .5rem;
+  cursor: pointer;
+}
+
+.suggest-box > div:hover {
+  background-color: #808080;
+  color: #fff;
 }

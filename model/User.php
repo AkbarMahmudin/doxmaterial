@@ -14,7 +14,8 @@ function login($username, $password)
 
 function getUserById($id)
 {
-  $query = "SELECT id, username, role, outlet_id FROM pegawai WHERE id = '$id'";
+  $query = "SELECT id, username, role, outlet_id FROM pegawai
+            WHERE id = '$id'";
   $result = mysqli_query($GLOBALS['DB'], $query);
 
   return mysqli_num_rows($result) > 0

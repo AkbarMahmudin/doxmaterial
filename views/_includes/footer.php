@@ -1,8 +1,8 @@
-<script src="../../js/index.js"></script>
 <!-- fontawesome -->
 <script src="https://kit.fontawesome.com/94fce472e4.js" crossorigin="anonymous"></script>
 <!-- Sweetalert -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../../js/index.js"></script>
 <!-- Datatables -->
 <script src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/responsive/2.3.0/js/dataTables.responsive.min.js"></script>

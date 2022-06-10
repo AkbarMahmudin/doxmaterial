@@ -5,20 +5,17 @@ include '../../helpers/upload-image.php';
 
 session_start();
 
-// STORE
+// UPDATE
+$id = $_POST['id'];
 $nama = $_POST['nama'];
 $harga = $_POST['harga'];
 $gambar = $_FILES['gambar'];
+$file_gambar = $_POST['file_gambar'];
 
 // cek gambar
 if (isset($_FILES['gambar'])) {
   $result = upload($gambar, 'barang');
-  if ($result === 0) {
-    $response = [
-      'status' => 'error',
-      'message' => 'Pilih gambar terlebih dahulu!'
-    ];
-  } elseif ($result === -1) {
+  if ($result === -1) {
     $response = [
       'status' => 'error',
       'message' => 'Ekstensi file tidak valid!'
@@ -31,29 +28,28 @@ if (isset($_FILES['gambar'])) {
   } else {
     $response = [
       'status' => 'success',
-      'message' => 'file berhasil ditambahkan'
+      'message' => 'data berhasil diperbaharui'
     ];
     $gambar = $result;
   }
+  
+  // menampilkan notifikasi
+  $_SESSION['response'] = $response;
 }
-$newBarang = store($nama, $harga, $gambar);
+$updateBarang = update_barang($id, $nama, $harga, $gambar);
 
-if (!$newBarang){
+if (!$updateBarang){
   $response = [
     'status' => 'error',
-    'message' => 'Barang gagal ditambahkan!'
+    'message' => 'Barang gagal diupdate!'
   ];
   $_SESSION['response'] = $response;
-  header("location:../../views/barang/add-barang.php");
+  header("location:../../views/barang/index.php");
   return;
 }
+elseif ($updateBarang === -1){
+    unlink("../../img/barang/".$file_gambar);
+    header("location:../../views/barang/index.php");
+}
+    header("location:../../views/barang/index.php");
 
-$response = [
-  'status' => 'success',
-  'message' => 'Barang berhasil ditambahkan!'
-];
-
-// menampilkan notifikasi
-$_SESSION['response'] = $response;
-
-header("location:../../views/barang/index.php");
