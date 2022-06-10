@@ -58,9 +58,18 @@
                       <tr>
                           <td><?= $key+1; ?></td>
                           <td><?= $row['alamat_outlet'];?></td>
-                          <td><?= $row['jumlah'];?></td>
-                          <td><a href="#"class="btn btn-secondary">Edit</a>
-                              <a href="#"class="btn btn-danger">Hapus</a></td>
+                          <td>
+                            <span><?= $row['jumlah'];?></span>
+                            <form action="#" style="display: none;">
+                              <input type="number" class="form-control" style="width: 70px; text-align: center; padding: .5rem 12px; margin: auto 0;">
+                              <button type="button" onclick="return alert('inserted')" hidden></button>
+                            </form>
+                          </td>
+                          <td>
+                            <button type="button" class="btn btn-secondary" onclick="editStok(this)" style="margin-right: .5rem;">Ubah</button>
+                            <button type="button" id="btn-delete" class="btn btn-danger">Hapus</button>
+                            <button type="button" id="btn-save" class="btn btn-primary" style="display: none;" onclick="updateStok(this)">Simpan</button>
+                          </td>
                       </tr>
                       <?php } ?>
                   </tbody>
@@ -75,6 +84,7 @@
     <?php
       include '../_includes/footer.php';
     ?>
+    <script src="../../js/barang/index.js"></script>
 
 </body>
 

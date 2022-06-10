@@ -31,7 +31,7 @@ $orderCreated = createOrders($pegawaiId, $memberId, $metode, $telepon, $rekening
 if (!$orderCreated) {
   $response = [
     'status' => 'error',
-    'msg' => 'Gagal menambahkan order'
+    'message' => 'Gagal menambahkan order'
   ];
   echo json_encode($response);
   return;
