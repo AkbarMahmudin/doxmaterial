@@ -2,7 +2,6 @@ const renderMenu = async () => {
   const content = document.getElementById('content');
   const response = await getBarang();
   const menus = JSON.parse(response).data;
-  console.log(menus);
 
   for (const menu of menus) {
     const menuElement = createMenuElement(
@@ -11,7 +10,7 @@ const renderMenu = async () => {
       `../../img/${!menu.gambar ? 'no-img.jpg' : 'barang/' + menu.gambar}`,
       menu.stok_barang
     );
-    menuElement['MENU_ID'] = menu.id;
+    menuElement['STOK_ID'] = menu.stok_id;
     content.append(menuElement);
   }
 };
@@ -26,10 +25,10 @@ const createMenuElement = (name, price, img, stock = null) => {
   cardBody.classList.add('card-body');
   cardBody.innerHTML = `
   <h2>${name}</h2>
-  <h4 class="price">Rp. ${price}</h4>`
+  <h4 class="price">Rp. ${price}</h4>`;
   if (stock) {
-    cardBody.innerHTML += `<p class="stock">Stok: ${stock}</p>`
-  };
+    cardBody.innerHTML += `<p class="stock">Stok: ${stock}</p>`;
+  }
 
   card.addEventListener('click', async () => {
     const cartIsDuplicate = checkCartDuplicate(card);
@@ -37,7 +36,12 @@ const createMenuElement = (name, price, img, stock = null) => {
     if (cartIsDuplicate === false) {
       await addToCart(card);
     } else {
-      alert(`${name} sudah ada dipesan`);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: `${name} sudah dipesan`,
+        confirmButtonColor: '#01adb5',
+      });
     }
   });
   card.append(imageCard, cardBody);
@@ -46,15 +50,21 @@ const createMenuElement = (name, price, img, stock = null) => {
 
 const addToCart = async (menuElement) => {
   const cartContainer = document.getElementsByClassName('cart-list')[0];
-  const cartItem = await createCartItem(menuElement['MENU_ID']);
+  const cartItem = await createCartItem(menuElement['STOK_ID']);
   cartContainer.append(cartItem);
 };
 
 const createCartItem = async (menuId) => {
   const response = await getBarangById(menuId);
   const menu = JSON.parse(response).data;
-  cart.push(menu);
-  console.log(cart);
+  const newCart = {
+    nama: menu.nama,
+    stokId: parseInt(menu.stok_id),
+    jumlah: 1,
+    totalHarga: parseInt(menu.harga),
+  };
+  cart.push(newCart);
+
   let qty = 1;
   const cartItem = document.createElement('div');
   cartItem.classList.add('cart-item');
@@ -85,11 +95,11 @@ const createCartItem = async (menuId) => {
 };
 
 const checkCartDuplicate = (menuItem) => {
-  const cartItems = document.querySelectorAll('#cart-container > .cart-item');
+  const cartItems = document.querySelectorAll('.cart-list > .cart-item');
 
   if (cartItems.length) {
     for (const cart of cartItems) {
-      if (cart['CART_ID'] === menuItem['MENU_ID']) {
+      if (cart['CART_ID'] === menuItem['STOK_ID']) {
         return true;
       }
     }
@@ -111,13 +121,19 @@ const decrementHandle = (counter, price) => {
 
       getTotalHarga(parseInt(totalHargaElm) - price);
       itemPrice.innerText = `Rp. ${totalHarga}`;
+
+      // update data cart: arr
+      const stokId = counter.parentElement.parentElement['CART_ID'];
+      const cartFiltered = cart.filter((c) => c.stokId == stokId)[0];
+      cartFiltered.jumlah = parseInt(counter.innerText);
+      cartFiltered.totalHarga = parseInt(totalHarga);
     }
 
     if (counter.innerText < 1) {
       const cartItem = event.target.parentElement.parentElement;
       const cartIndex = cart.findIndex((c) => c.id === cartItem['CART_ID']);
       cart.splice(cartIndex, 1);
-      console.log(cart);
+
       cartItem.remove();
     }
   });
@@ -137,6 +153,12 @@ const incrementHandle = (counter, price) => {
 
     getTotalHarga(parseInt(totalHargaElm) + price);
     itemPrice.innerText = `Rp. ${totalHarga}`;
+
+    // update data cart: arr
+    const stokId = counter.parentElement.parentElement['CART_ID'];
+    const cartFiltered = cart.filter((c) => c.stokId == stokId)[0];
+    cartFiltered.jumlah = parseInt(counter.innerText);
+    cartFiltered.totalHarga = parseInt(totalHarga);
   });
   return button;
 };
@@ -152,5 +174,13 @@ const getTotalHarga = (value) => {
     buttonNext.setAttribute('disabled', true);
   }
 
-  localStorage.setItem('TOTAL_HARGA', parseInt(totalHargaElm.innerText));
+  const dataOrder = {
+    orders: cart,
+    totalHarga: parseInt(totalHargaElm.innerText),
+  };
+
+  buttonNext.addEventListener('click', (event) => {
+    event.preventDefault();
+    sessionStorage.setItem('DATA_ORDER', JSON.stringify(dataOrder));
+  });
 };

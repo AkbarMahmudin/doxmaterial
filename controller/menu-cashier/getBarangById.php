@@ -2,8 +2,8 @@
 
 include '../../model/Barang.php';
 
-$id = $_GET['id'];
-$barang = show($id);
+$stokId = $_GET['id'];
+$barang = showByStokId($stokId);
 
 $response = [
   'status' => 'success',

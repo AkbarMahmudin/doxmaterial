@@ -1,5 +1,5 @@
 <?php
-  include '../../controller/members/getMembers.php';
+include '../../controller/members/getMembers.php';
 ?>
 
 <!DOCTYPE html>
@@ -34,41 +34,41 @@
               <th>Action</th>
             </tr>
           </thead>
-  
+
           <tbody>
-            <?php foreach($members as $key => $member) : ?>
-            <tr>
-              <td><?= $key + 1 ?></td>
-              <td>
-                <a href="detail-member.php?id=<?= $member['id']; ?>">
-                  <?= $member['nama_lengkap']; ?></td>
+            <?php foreach ($members as $key => $member) : ?>
+              <tr>
+                <td><?= $key + 1 ?></td>
+                <td>
+                  <a href="detail-member.php?id=<?= $member['id']; ?>">
+                    <?= $member['nama_lengkap']; ?>
+                </td>
                 </a>
-              <td><?= $member['jenis_kelamin']; ?></td>
-              <td><?= $member['telepon']; ?></td>
-              <td><?= $member['alamat']; ?></td>
-              <td style="text-align: center;">
-                <!-- 
+                <td><?= $member['jenis_kelamin']; ?></td>
+                <td><?= $member['telepon']; ?></td>
+                <td><?= $member['alamat']; ?></td>
+                <td style="text-align: center;">
+                  <!-- 
                   link edit agar mendapatkan data member berdasarkan id 
                   contoh: edit-member.php?id=MB01
                 -->
-                <a href="edit-member.php?id=<?= $member['id']; ?>" class="btn btn-secondary">Edit</a>
-                <!-- 
+                  <a href="edit-member.php?id=<?= $member['id']; ?>" class="btn btn-secondary" title="Ubah"><i class="fa-solid fa-pencil"></i></a>
+                  <!-- 
                   button / form utk hapus data
                  -->
-                <form action="../../controller/members/delete.php" method="post" style="padding: 0; margin: 0; display: inline-block;">
-                  <!-- elemen utk menampung nilai id -->
-                  <input type="hidden" name="id" value="<?= $member['id'] ?>">
-                  <button type="submit" class="btn btn-danger">Hapus</button>
-                </form>
-                <!-- <a href="#" class="btn btn-danger" style="margin: 2px;">Hapus</a> -->
-              </td>
-            </tr>
+                  <form action="../../controller/members/delete.php" method="post" style="padding: 0; margin: 0; display: inline-block;">
+                    <!-- elemen utk menampung nilai id -->
+                    <input type="hidden" name="id" value="<?= $member['id'] ?>">
+                    <button type="submit" class="btn btn-danger" title="Hapus" onclick="return confirm('Apakah anda yakin?')"><i class="fa-solid fa-trash"></i></button>
+                  </form>
+                </td>
+              </tr>
             <?php endforeach; ?>
           </tbody>
         </table>
-  
+
         <a href="add-member.php" class="btn btn-primary btn-block" style="margin-top: 1rem;">
-          <i class="fa-solid fa-plus"></i>  
+          <i class="fa-solid fa-plus"></i>
           Buat Member Baru
         </a>
       </div>
@@ -79,7 +79,7 @@
 
   <!-- Import JS -->
   <?php
-    include '../_includes/footer.php';
+  include '../_includes/footer.php';
   ?>
 </body>
 

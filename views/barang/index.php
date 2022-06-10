@@ -44,13 +44,13 @@
           // foreach
           foreach($datas as $row){ 
           ?>
-          <article class="card hover">
+          <a href="show-barang.php?id=<?= $row['id']; ?>" class="card hover" style="color: inherit;">
             <img src="<?= !$row['gambar'] ? '../../img/no-img.jpg' : '../../img/barang/'.$row['gambar']; ?>" alt="" class="img-card">
             <div class="card-body">
               <h2><?= $row['nama']; ?></h2>
               <h4 class="price">Rp. <?= $row['harga']; ?></h4>
             </div>
-          </article>
+          </a>
           <?php 
           } ?>
         </section>
@@ -62,16 +62,6 @@
     <?php
       include '../_includes/footer.php';
     ?>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <?php if (isset($_GET['pesan']) && $_GET['pesan'] == 'success'): ?>
-    <script>
-        Swal.fire({
-        icon: 'success',
-        title: 'Berhasil',
-        text: 'Data Baru udah Ditambah!',
-    })
-</script>
-    <?php endif; ?>
 </body>
 
 </html>
