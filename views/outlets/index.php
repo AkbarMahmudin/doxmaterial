@@ -41,7 +41,7 @@
         <!-- outlet pertama -->
         <?php foreach($outlets as $outlet) : ?>
         <div class="card">
-          <img src="../../img/outlets_img/outlet-1.png" alt="Outlet 1" class="img-card">
+          <img src="<?= !$outlet['gambar'] ? '../../img/no-img.jpg' : '../../img/outlets/'.$outlet['gambar']; ?>" alt="" class="img-card">
           <div class="card-body">
             <h3><?= $outlet['kota']; ?></h3>
             <p><?= $outlet['alamat']; ?></p>

@@ -1,3 +1,8 @@
+<?php
+@include '../../model/Outlet.php';
+$id = $_GET['id'];
+$outlet = getOutletsById($id);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,11 +29,14 @@
       <!-- start add outlets -->
       <h1>Ubah Outlet</h1>
 
-      <form action="">
+      <form action="../../controller/outlets/update.php" method="POST" class="form">
+
+      <input type="hidden" name="id" value="<?= $outlet['id']; ?>">
+      
         <label> Kota </label>
-        <input type="text" name="kota" id="" class="form-control" />
+        <input type="text" name="kota" id="" class="form-control"  value="<?= $outlet['kota']; ?>" />
         <label> Alamat </label>
-        <textarea name="alamat" id="alamat" cols="30" rows="10" class="form-control"></textarea>
+        <textarea name="alamat" id="alamat" cols="30" rows="10" class="form-control"> <?= $outlet['alamat']; ?> </textarea>
         <label> Gambar </label>
         <input type="file" name="gambar" id="inputFile" class="form-control" />
         <div class="image-preview" id="imagePreview">

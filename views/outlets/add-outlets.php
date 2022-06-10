@@ -24,9 +24,9 @@
       <!-- start add outlets -->
       <h1>Outlet Baru</h1>
 
-      <form action="../../controller/outlets/create.php" method="POST" class="form" enctype="mulipart/form-data">
+      <form action="../../controller/outlets/create.php" method="POST" class="form" enctype="multipart/form-data">
         <label> Kota </label>
-        <input type="text" name="kota" id="" class="form-control" />
+        <input type="text" name="kota" id="kota" class="form-control" />
         <label> Alamat </label>
         <textarea name="alamat" id="alamat" cols="30" rows="10" class="form-control"></textarea>
         <label> Gambar </label>
