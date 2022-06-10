@@ -29,12 +29,14 @@ body{
 }
 .right{
     height: 200px;
-    background: url('../img/background-login.png');
+    /* background: url('../img/background-login.png'); */
+    background-color: var(--secondary-color);
     background-size: cover;
     order: 1;
 }
 .right .copy img{
-    height: 70%;
+    /* height: 50%; */
+    width: 70%;
 }
 .right .copy{
     text-align: center;

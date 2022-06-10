@@ -5,6 +5,11 @@
   <?php
   include '../_includes/header.php';
   ?>
+  <?php
+  @include '../../model/DetailOrder.php';
+
+  $orders = getDetailOrders($user['outlet_id']);
+  ?>
   <!-- Custom Style -->
   <link rel="stylesheet" href="../../css/orders.css" />
 </head>
@@ -63,8 +68,9 @@
       <table class="table" id="myTable" width="100%">
         <thead>
           <tr>
-            <th>Menu</th>
-            <th>ID</th>
+            <th>No</th>
+            <th>Barang</th>
+            <th>ID Order</th>
             <th>Price</th>
             <th>Qty</th>
             <th>Total</th>
@@ -73,106 +79,17 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012205</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-
-          <tr>
-            <td>Pizza</td>
-            <td>DC - 01012204</td>
-            <td>100.000</td>
-            <td>2</td>
-            <td>200.000</td>
-            <td>26 March 2022</td>
-          </tr>
-
-          <tr>
-            <td>Iced Coffe</td>
-            <td>DC - 01012203</td>
-            <td>30.000</td>
-            <td>2</td>
-            <td>60.000</td>
-            <td>26 March 2022</td>
-          </tr>
-
-          <tr>
-            <td>Toast</td>
-            <td>DC - 01012202</td>
-            <td>35.000</td>
-            <td>2</td>
-            <td>70.000</td>
-            <td>26 March 2022</td>
-          </tr>
-
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
-          <tr>
-            <td>Hamburger</td>
-            <td>DC - 01012201</td>
-            <td>45.000</td>
-            <td>2</td>
-            <td>90.000</td>
-            <td>26 March 2022</td>
-          </tr>
+          <?php foreach ($orders as $key => $order) : ?>
+            <tr>
+              <td><?= $key + 1 ?></td>
+              <td><?= $order['nama'] ?></td>
+              <td><?= $order['id'] ?></td>
+              <td><?= $order['harga'] ?></td>
+              <td><?= $order['jumlah'] ?></td>
+              <td><?= $order['total'] ?></td>
+              <td><?= $order['tanggal'] ?></td>
+            </tr>
+          <?php endforeach; ?>
         </tbody>
       </table>
       <!-- <div class="pagination-container">
@@ -187,7 +104,7 @@
 
   <!-- Import JS -->
   <?php
-    include '../_includes/footer.php';
+  include '../_includes/footer.php';
   ?>
 </body>
 

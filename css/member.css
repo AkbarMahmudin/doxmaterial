@@ -1,0 +1,99 @@
+.profile-member {
+  display : flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: normal;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.profile-image {
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  order: 0;
+  font-size: 28px;
+  width: 80px;
+  height: 80px;
+  font-weight: bolder;
+  justify-content: center;
+  align-items: center;
+  background: var(--first-color);
+  border-radius: 50%;
+  color: var(--secondary-color);
+  margin: 0 14px;
+}
+
+.profile-detail {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  margin: 1rem 0 0 0;
+}
+
+.riwayat-order {
+  display : flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: normal;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.grafik {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  order: 0;
+  width: 30%;
+  padding-right: .5rem;
+}
+
+.detail-order {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  width: 70%;
+  padding-left: .5rem;
+}
+
+.piutang {
+  display : flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: normal;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+}
+
+.detail-piutang {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  order: 0;
+  width: 60%;
+  padding-right: .5rem;
+}
+
+.riwayat-pembayaran {
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+  width: 40%;
+  padding-left: .5rem;
+}
