@@ -26,7 +26,6 @@ $member = getMemberById($id);
 
   <!-- Content Boody -->
   <main>
-    <!-- Coding disini -->
     <!-- start container orders -->
     <div class="container">
       <h1>Ubah Member</h1>

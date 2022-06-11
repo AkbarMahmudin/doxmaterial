@@ -1,9 +1,17 @@
+<?php
+    // @include '../../controller/outlets/getOutlets.php';
+    // var_dump($outlets);
+    // die;
+    @include '../../model/Outlet.php';
+    $outlets = getOutlets();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <?php
-  include '../_includes/header.php';
+  @include '../_includes/header.php';
   ?>
   <!-- Custom Style -->
   <link rel="stylesheet" href="../../css/outlet.css">
@@ -14,7 +22,7 @@
 
   <?php
   // $title = 'Outlets';
-  include '../_includes/side.php';
+  @include '../_includes/side.php';
   ?>
 
   <!-- Content Boody -->
@@ -31,77 +39,15 @@
                     </div> -->
         </a>
         <!-- outlet pertama -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-1.png" alt="Outlet 1" class="img-card">
+        <?php foreach($outlets as $outlet) : ?>
+        <a href="detail-outlets.php?id=<?=$outlet['id']; ?>" class="card">
+          <img src="<?= !$outlet['gambar'] ? '../../img/no-img.jpg' : '../../img/outlets/'.$outlet['gambar']; ?>" alt="" class="img-card">
           <div class="card-body">
-            <h3>Bandung</h3>
-            <p>Jl. Melong</p>
+            <h3><?= $outlet['kota']; ?></h3>
+            <p><?= $outlet['alamat']; ?></p>
           </div>
-        </div>
-
-        <!-- outlet kedua -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-2.png" alt="Outlet 2" class="img-card">
-          <div class="card-body">
-            <h3>Bandung</h3>
-            <p>Jl. Buah Batu</p>
-          </div>
-        </div>
-
-        <!-- outlet ketiga -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-3.png" alt="Outlet 3" class="img-card">
-          <div class="card-body">
-            <h3>Jakarta</h3>
-            <p>Jl. K.H Mas Mansur</p>
-          </div>
-        </div>
-
-        <!-- outlet keempat -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-4.png" alt="Outlet 4" class="img-card">
-          <div class="card-body">
-            <h3>Surabaya</h3>
-            <p>Jl. Siwalankerto</p>
-          </div>
-        </div>
-
-        <!-- outlet kelima -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-5.png" alt="Outlet 5" class="img-card">
-          <div class="card-body">
-            <h3>Tasikmalaya</h3>
-            <p>Jl. Seladarma</p>
-          </div>
-        </div>
-
-        <!-- outlet keenam -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-6.png" alt="Outlet 6" class="img-card">
-          <div class="card-body">
-            <h3>Yogyakarta</h3>
-            <p>Jl. Laksda Adisucipto</p>
-          </div>
-        </div>
-
-        <!-- outlet ketujuh -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-7.png" alt="Outlet 7" class="img-card">
-          <div class="card-body">
-            <h3>Garut</h3>
-            <p>Jl. Cipanas</p>
-          </div>
-        </div>
-
-        <!-- outlet kedelapan -->
-        <div class="card">
-          <img src="../../img/outlets_img/outlet-8.png" alt="Outlet 8" class="img-card">
-          <div class="card-body">
-            <h3>Bekasi</h3>
-            <p>Jl. Akasia</p>
-          </div>
-        </div>
-      </div>
+        </a>
+        <?php endforeach; ?>
     </div>
     <!-- end wrap list outlets -->
 
@@ -110,8 +56,17 @@
   <!-- End Content Body -->
 
   <?php
-    include '../_includes/footer.php';
+    @include '../_includes/footer.php';
   ?>
+
+<?php if (isset($_GET['status']) && $_GET['status'] === 'success'): ?>
+        <script>
+            Swal.fire({
+                icon: 'success',
+                text: 'Outlet baru berhasil ditambahkan!',
+            })
+        </script>
+    <?php endif; ?>
 
 </body>
 
