@@ -2,16 +2,17 @@
 
 include dirname(__DIR__) . '/config/db.php';
 
-function getDetailOrders($outletId = null) {
-  $query = "SELECT b.nama, o.id, b.harga, d.jumlah, d.total, o.tanggal FROM detail_orders d
-            INNER JOIN orders o ON d.orders_id = o.id
-            INNER JOIN stok s ON d.stok_id = s.id
-            INNER JOIN barang b ON s.barang_id = b.id
-            WHERE o.status = 'Lunas' ";
+function getDetailOrders($outletId = null, $startDate = null, $endDate = null) {
+  $query = "SELECT * FROM log_orders WHERE status = 'Lunas' ";
   if ($outletId) {
-    $query .= "AND s.outlet_id = '$outletId' ";
+    $query .= "AND outlet_id = '$outletId' ";
   }
-  $query .= "ORDER BY o.tanggal DESC, o.id DESC";
+
+  if ($startDate && $endDate) {
+    $query .= "AND DATE_FORMAT(tgl_orders, '%Y-%m-%d') BETWEEN '$startDate' AND '$endDate'";
+  }
+
+  $query .= "ORDER BY tgl_orders DESC, orders_id DESC";
 
   $result = mysqli_query($GLOBALS['DB'], $query);
 
@@ -68,6 +69,25 @@ function getDetailByMemberId($memberId) {
             INNER JOIN barang b ON s.barang_id = b.id 
             WHERE o.member_id = '$memberId' 
             ORDER BY o.tanggal DESC, o.id DESC";
+  $result = mysqli_query($GLOBALS['DB'], $query);
+
+  if ($result) {
+    $data = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+      array_push($data, $row);
+    }
+    return $data;
+  }
+  return false;
+}
+
+function getSumOrderBarang($memberId) {
+  $query = "SELECT b.nama, SUM(d.jumlah) AS barang_order FROM detail_orders d
+            INNER JOIN stok s ON d.stok_id = s.id
+            INNER JOIN barang b ON s.barang_id = b.id
+            INNER JOIN orders o ON d.orders_id = o.id
+            GROUP BY b.id, o.member_id
+            HAVING o.member_id = '$memberId'";
   $result = mysqli_query($GLOBALS['DB'], $query);
 
   if ($result) {
