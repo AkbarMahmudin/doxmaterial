@@ -23,8 +23,8 @@
       <!-- Coding disini -->
       <div class="show_outlet">
         <div class="detail_outlet">
+        <a href="index.php"class="btn btn-primary" title="Kembali"><i class="fa-solid fa-angle-left"></i></a>
           <div class="detail_img">
-              <a href="index.php"class="btn btn-primary" title="Kembali"><i class="fa-solid fa-angle-left"></i></a>
               <img src="<?= !$data['gambar'] ? '../../img/no-img.jpg' : '../../img/outlets/'.$data['gambar']; ?>" alt="" />
           </div>
           <div class="detail_action">

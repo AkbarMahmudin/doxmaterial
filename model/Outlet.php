@@ -38,14 +38,14 @@ function getOutletsById($id) {
 
 //fungsi untuk mengupdate data outlet
 function updateOutlet($id, $kota, $alamat, $gambar=NULL) {
-    $query = "UPDATE outlet SET kota ='$kota', alamat ='$alamat'";
-    if($gambar) {
-        $query .= ", gambar = '$gambar'";
+    $query = "UPDATE outlet SET kota ='$kota', alamat ='$alamat' WHERE id ='$id'";
+    if($gambar != null) {
+        $query = "UPDATE outlet SET kota ='$kota', alamat ='$alamat', gambar='$gambar' WHERE id ='$id'";
     }
-    $query .= "WHERE id = '$id'";
-    mysqli_query($GLOBALS['DB'], $query);
 
-    return (mysqli_affected_rows($GLOBALS['DB']) > 0)
+    $result = mysqli_query($GLOBALS['DB'], $query);
+
+    return $result
     ? true
     : false;
 }

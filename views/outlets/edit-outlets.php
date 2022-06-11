@@ -29,7 +29,7 @@ $outlet = getOutletsById($id);
       <!-- start add outlets -->
       <h1>Ubah Outlet</h1>
 
-      <form action="../../controller/outlets/update.php" method="POST" class="form">
+      <form action="../../controller/outlets/update.php" method="POST" class="form" enctype="multipart/form-data">
 
       <input type="hidden" name="id" value="<?= $outlet['id']; ?>">
       
@@ -37,7 +37,9 @@ $outlet = getOutletsById($id);
         <input type="text" name="kota" id="" class="form-control"  value="<?= $outlet['kota']; ?>" />
         <label> Alamat </label>
         <textarea name="alamat" id="alamat" cols="30" rows="10" class="form-control"> <?= $outlet['alamat']; ?> </textarea>
-        <label> Gambar </label>
+        <input type="hidden"name="file_gambar"value="<?=$outlet['gambar'];?>">
+        <label for="GambarOutlets"> Gambar Outlet</label>
+        <img src="../../img/outlets/<?=$outlet['gambar'];?>" alt=""style="display:block;width:450px;height:300px;margin-bottom:1rem;">
         <input type="file" name="gambar" id="inputFile" class="form-control" />
         <div class="image-preview" id="imagePreview">
           <img class="image_preview" src="" alt="Image Preview" />
