@@ -24,10 +24,8 @@
       <div class="menu">
 
         <section class="control">
-          <button class="btn btn-secondary btn-filter"><i class="fa-solid fa-filter filter-icon"></i> Filter</button>
-
           <form class="form-search">
-            <input type="text" class="input-search" placeholder="Cari menu">
+            <input type="text" class="input-search" placeholder="Cari barang">
             <button class="btn btn-primary btn-search">Cari</button>
           </form>
         </section>
