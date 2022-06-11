@@ -24,33 +24,38 @@
       <!-- start add outlets -->
       <h1>Pegawai Baru</h1>
 
-      <form action="" class="form">
+      <form action="../../controller/employees/create.php" class="form" method="POST" enctype="multipart/form-data">
         <label> Nama </label>
-        <input type="text" name="nama" id="" class="form-control" />
+        <input type="text" name="nama" id="" class="form-control" placeholder="Masukkan nama" />
+
         <label> Username </label>
-        <input type="text" name="username" id="" class="form-control" />
+        <input type="text" name="username" id="" class="form-control" placeholder="Masukkan username"/>
+
         <label> Password </label>
-        <input type="password" name="password" id="" class="form-control" />
+        <input type="password" name="password" id="" class="form-control"/>
+
         <label> Role </label>
         <select name="role" id="role" class="form-control"> 
             <option selected>Select role</option>
-            <option value="cashier">cashier</option>
-            <option value="admin">admin</option>
+            <option value="Admin">Admin</option>
+            <option value="Pegawai">Pegawai</option>
         </select>
-        <label> Outlet </label>
+
+        <label> Toko </label>
         <select name="outlet" id="outlet" class="form-control"> 
-            <option selected>Select outlet</option>
+            <option selected>Select toko</option>
             <option value="Bandung">Bandung</option>
             <option value="Jakarta">Jakarta</option>
         </select>
+
         <label> Gambar </label>
         <input type="file" name="gambar" id="inputFile" class="form-control" />
         <div class="image-preview" id="imagePreview">
           <img class="image_preview" src="" alt="Image Preview" />
           <span class="image-preview_text">Image Preview</span>
         </div>
-        <button type="button" class="btn" onclick="history.back()">Batal</button>
-        <button type="submit" class="btn btn-primary">Simpan</button>
+        <button type="button" class="btn" onclick="history.back()" style="margin-right: 20px">Batal</button>
+        <button type="submit" class="btn btn-primary" >Simpan</button>
       </form>
 
     </div>
