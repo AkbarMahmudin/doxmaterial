@@ -10,14 +10,25 @@ function store($nama,$harga,$gambar){
     : false;
 }
     
-function view($outletId = null){
-    $query = "SELECT * FROM barang ORDER BY id ASC";
+function view($outletId = null, $key = null){
+    $query = "SELECT * FROM barang ";
     if ($outletId) {
         $query = "SELECT b.*, s.jumlah AS stok_barang, s.id AS stok_id FROM barang b
         INNER JOIN stok s ON s.barang_id = b.id
         INNER JOIN outlet o ON s.outlet_id = o.id
-        WHERE s.outlet_id = '$outletId'";
+        WHERE s.outlet_id = '$outletId' ";
     }
+
+    if ($key) {
+        $outletId
+            ? $query .= "AND "
+            : $query .= "WHERE ";
+
+        $query .= "nama LIKE '%$key%' ";
+    }
+
+    $query .= "ORDER BY id ASC ";
+
     $result = mysqli_query($GLOBALS['DB'], $query);
     
     $data = [];

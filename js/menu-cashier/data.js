@@ -1,7 +1,10 @@
 const cart = [];
 
 // barang
-function getBarang() {
+function getBarang(key = null) {
+  if (key) {
+    return $.get(`../../controller/menu-cashier/getBarang.php?nama_barang=${key}`);
+  }
   return $.get('../../controller/menu-cashier/getBarang.php');
 }
 

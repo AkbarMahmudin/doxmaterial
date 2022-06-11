@@ -21,7 +21,17 @@ if (isset($_COOKIE['userId'])) {
 }
 
 $outletId = $user['outlet_id'];
-$barang = ($outletId) ? view($outletId) : view();
+
+if ($outletId) {
+  if (isset($_GET['nama_barang'])) {
+    $namaBarang = $_GET['nama_barang'];
+    $barang = view($outletId, $namaBarang);
+  } else {
+    $barang = view($outletId);
+  }
+} else {
+  $barang = view();
+}
 
 $response = [
   'status' => 'success',

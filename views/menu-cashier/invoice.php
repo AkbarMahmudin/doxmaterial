@@ -27,9 +27,11 @@ include '../../controller/menu-cashier/invoice.php';
     <!-- Coding disini -->
     <div class="card">
       <div class="card-body" id="invoice">
-        <h1>Invoice</h1>
-        <p>Tgl: <span id="tgl"><?= date_format(date_create($order['tanggal']), 'd M Y') ?></span></p>
-        <p>ID : <?= $order['id'] ?></p>
+        <div id="header-invoice">
+          <h1>Invoice</h1>
+          <p>Tgl: <span id="tgl"><?= date_format(date_create($order['tanggal']), 'd M Y') ?></span></p>
+          <p>ID : <?= $order['id'] ?></p>
+        </div>
 
         <table class="table" id="invoiceTable" width="100%">
           <thead>
@@ -75,8 +77,8 @@ include '../../controller/menu-cashier/invoice.php';
   include '../_includes/footer.php';
   ?>
 
-  <script type="text/javascript" src="https://cdn.datatables.net/buttons/2.2.3/js/dataTables.buttons.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.12.1/b-2.2.3/b-html5-2.2.3/b-print-2.2.3/datatables.min.js"></script>
   <!-- Custom js -->
   <script>
@@ -87,16 +89,29 @@ include '../../controller/menu-cashier/invoice.php';
         ordering: false,
         info: false,
         dom: 'frtipB',
-        buttons: [
-          {
+        buttons: [{
             extend: 'print',
             text: 'Print',
             tag: 'button',
+            title: $('#header-invoice').html(),
+            messageBottom: $('#detail-total').html(),
+            customize: function(win) {
+              $(win.document.body)
+                .css('font-size', '10pt')
+                .css('margin', '0')
+                .css('padding', '1rem');
+
+              $(win.document.body).find('table')
+                .addClass('compact')
+                .css('font-size', 'inherit');
+            },
             className: 'btn btn-secondary',
             init: function(api, node, config) {
               $(node).removeClass('dt-button')
               $(node).removeClass('buttons-print')
-              $(node).css({ marginTop: '10px' });
+              $(node).css({
+                marginTop: '10px'
+              });
             }
           },
           {
@@ -107,7 +122,9 @@ include '../../controller/menu-cashier/invoice.php';
             init: function(api, node, config) {
               $(node).removeClass('dt-button')
               $(node).removeClass('buttons-pdf')
-              $(node).css({ marginTop: '10px' });
+              $(node).css({
+                marginTop: '10px'
+              });
             }
           },
         ]

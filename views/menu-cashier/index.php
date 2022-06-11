@@ -21,11 +21,11 @@
       <div class="menu">
 
         <section class="control">
-          <button class="btn btn-secondary btn-filter"><i class="fa-solid fa-filter filter-icon"></i> Filter</button>
+          <!-- <button class="btn btn-secondary btn-filter"><i class="fa-solid fa-filter filter-icon"></i> Filter</button> -->
 
           <form class="form-search">
-            <input type="text" class="input-search" placeholder="Cari menu">
-            <button class="btn btn-primary btn-search">Cari</button>
+            <input type="text" id="input-search" class="input-search" placeholder="Cari menu">
+            <button id="btn-search" class="btn btn-primary btn-search">Cari</button>
           </form>
         </section>
 

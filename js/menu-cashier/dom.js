@@ -1,8 +1,9 @@
-const renderMenu = async () => {
+const renderMenu = async (key = null) => {
   const content = document.getElementById('content');
-  const response = await getBarang();
+  const response = key ? await getBarang(key) : await getBarang();
   const menus = JSON.parse(response).data;
 
+  clearElement();
   for (const menu of menus) {
     const menuElement = createMenuElement(
       menu.nama,
@@ -14,6 +15,13 @@ const renderMenu = async () => {
     content.append(menuElement);
   }
 };
+
+const clearElement = () => {
+  const content = document.querySelectorAll('#content > article')
+  for (let elm of content) {
+    elm.remove();
+  }
+}
 
 const createMenuElement = (name, price, img, stock = null) => {
   const card = document.createElement('article');
