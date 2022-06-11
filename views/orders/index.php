@@ -8,7 +8,15 @@
   <?php
   @include '../../model/DetailOrder.php';
 
-  $orders = getDetailOrders($user['outlet_id']);
+  $outletId = $user['outlet_id'];
+
+  if (isset($_GET['start_date']) && isset($_GET['end_date'])) {
+    $startDate = $_GET['start_date'];
+    $endDate = $_GET['end_date'];
+    $orders = getDetailOrders($outletId, $startDate, $endDate);
+  } else {
+    $orders = getDetailOrders($outletId);
+  }
   ?>
   <!-- Custom Style -->
   <link rel="stylesheet" href="../../css/orders.css" />
@@ -25,46 +33,27 @@
     <!-- Coding disini -->
     <!-- start container orders -->
     <div class="container">
-      <!-- start wrap button filter and date -->
-      <div class="wrap-filter-date">
-        <!-- start button filter -->
+      <div class="option">
+        <button class="btn btn-secondary btn-filter" onclick="showFilter()" title="Filter" style="padding: .75rem; margin-right: .5rem;"><i class="fa-solid fa-filter filter-icon"></i></button>
         <div class="dropdown">
-          <button class="btn btn-secondary filter-employees">
-            <i class="fa-solid fa-filter filter-icon"></i>
-            Filter
-          </button>
+          <button class="btn btn-secondary">Export</button>
           <div class="dropdown-content">
-            <a href="../../pages/employees.html">Outlet Bandung I</a>
-            <a href="#">Outlet Bandung II</a>
-            <a href="#">Outlet Surabaya</a>
-            <a href="#">Outlet Yogyakarta</a>
-            <a href="#">Outlet Jakarta</a>
-            <a href="#">Outlet Tasik</a>
-            <a href="#">Outlet Bekasi</a>
-            <a href="#">Outlet Garut</a>
+            <a href="#" onclick="exportToPdf('orders')">PDF</a>
+            <a href="#" onclick="exportToCsv('orders')">Excel</a>
           </div>
         </div>
-        <!-- end button filter -->
-
-        <!-- select date -->
-        <!-- <form class="date-orders">
-          <input type="date" name="date-orders" />
-        </form> -->
       </div>
-      <!-- end wrap button filter dan date-->
+      <!-- start wrap filter and date -->
+      <form action="#" method="GET" class="wrap-filter-date" id="form-filter" style="display: none;">
+        <input type="date" name="start_date" class="form-control" value="<?= !isset($_GET['start_date']) ? date("Y-m-d") : $_GET['start_date'];?>">
+        
+        <input type="date" name="end_date" class="form-control" value="<?= !isset($_GET['end_date']) ? date("Y-m-d") : $_GET['end_date'];?>">
+        <button type="submit" class="btn btn-primary">Filter</button>
+        <button type="button" class="btn btn-link" onclick="clearFilter()">Clear</button>
+      </form>
+      <!-- end wrap filter dan date-->
 
-      <!-- orders table -->
-      <!-- <div class="form-group">
-        <select name="state" id="maxRows" class="form-control" style="width: 150px">
-          <option value="5000">Show All</option>
-          <option value="5">5</option>
-          <option value="10">10</option>
-          <option value="15">15</option>
-          <option value="20">20</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
-      </div> -->
+
       <table class="table" id="myTable" width="100%">
         <thead>
           <tr>
@@ -82,21 +71,16 @@
           <?php foreach ($orders as $key => $order) : ?>
             <tr>
               <td><?= $key + 1 ?></td>
-              <td><?= $order['nama'] ?></td>
-              <td><?= $order['id'] ?></td>
+              <td><?= $order['nama_barang'] ?></td>
+              <td><?= $order['orders_id'] ?></td>
               <td><?= $order['harga'] ?></td>
               <td><?= $order['jumlah'] ?></td>
               <td><?= $order['total'] ?></td>
-              <td><?= $order['tanggal'] ?></td>
+              <td><?= $order['tgl_orders'] ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
-      <!-- <div class="pagination-container">
-        <nav>
-          <ul class="pagination"></ul>
-        </nav>
-      </div> -->
       <!-- end container orders -->
     </div>
   </main>
@@ -106,6 +90,8 @@
   <?php
   include '../_includes/footer.php';
   ?>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../../js/orders/index.js"></script>
 </body>
 
 </html>

@@ -37,7 +37,9 @@ include '../../controller/members/getMember.php';
       <div class="riwayat-order">
         <div class="grafik">
           <div class="card">
-            <div class="card-body"></div>
+            <div class="card-body">
+              <canvas id="myChart"></canvas>
+            </div>
           </div>
         </div>
         <div class="detail-order">
@@ -149,73 +151,9 @@ include '../../controller/members/getMember.php';
   <?php
   include '../_includes/footer.php';
   ?>
-  <script>
-    // DataTable
-    $(document).ready(function() {
-      $('.table').DataTable({
-        pagingType: 'simple',
-        searching: false,
-        info: false,
-        lengthChange: false,
-        oLanguage: {
-          oPaginate: {
-            sNext: '<span class="pagination-right"><i class="fa-solid fa-angle-right"></i></span>',
-            sPrevious: '<span class="pagination-left"><i class="fa-solid fa-angle-left"></i></span>',
-          },
-        },
-        dom: '<"wrapper"flipt>',
-        responsive: true,
-      });
-
-      $('#table-order_filter input').addClass('form-control').css({
-        width: '75%',
-        padding: '10px 5px',
-      });
-
-      $('#table-order_length select').addClass('form-control').css({
-        width: '38%',
-        padding: '10px 5px',
-      });
-    });
-
-
-    const formBayar = document.getElementById('form-bayar');
-    const btnBayar = document.getElementById('btn-bayar');
-    const btnCancel = document.getElementById('btn-cancel');
-    const inputNominal = document.getElementById('nominal');
-
-    function actBayar(element) {
-      const {
-        parentElement
-      } = element;
-      const formBayar = parentElement.querySelector('#form-bayar');
-
-      formBayar.style.display = 'inline-block';
-      element.style.display = 'none';
-    }
-
-    function cancelBayar(element) {
-      const {
-        parentElement
-      } = element.parentElement;
-      const formBayar = parentElement.querySelector('#form-bayar');
-      const btnBayar = parentElement.querySelector('#btn-bayar');
-
-      formBayar.style.display = 'none';
-      btnBayar.style.display = 'inline-block';
-    }
-
-    function submitBayar(element) {
-      const {
-        parentElement
-      } = element;
-      const btnSubmit = parentElement.querySelector('#btn-submit');
-
-      if (event.key === 'Enter') {
-        btnSubmit.click();
-      }
-    }
-  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+  <script src="../../js/members/dom.js"></script>
+  <script src="../../js/members/index.js"></script>
 </body>
 
 </html>
