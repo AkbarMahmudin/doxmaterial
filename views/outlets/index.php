@@ -40,13 +40,13 @@
         </a>
         <!-- outlet pertama -->
         <?php foreach($outlets as $outlet) : ?>
-        <div class="card">
+        <a href="detail-outlets.php?id=<?=$outlet['id']; ?>" class="card">
           <img src="<?= !$outlet['gambar'] ? '../../img/no-img.jpg' : '../../img/outlets/'.$outlet['gambar']; ?>" alt="" class="img-card">
           <div class="card-body">
             <h3><?= $outlet['kota']; ?></h3>
             <p><?= $outlet['alamat']; ?></p>
           </div>
-        </div>
+        </a>
         <?php endforeach; ?>
     </div>
     <!-- end wrap list outlets -->
