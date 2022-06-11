@@ -38,7 +38,7 @@
         <select name="role" id="role" class="form-control"> 
             <option selected>Select role</option>
             <option value="Admin">Admin</option>
-            <option value="Pegawai">Pegawai</option>
+            <option value="Kasir">Kasir</option>
         </select>
 
         <label> Toko </label>

@@ -27,24 +27,6 @@
 
     <!-- wrap employees -->
     <div class="container">
-      <!-- start button filter -->
-      <!-- <div class="dropdown">
-        <button class="btn btn-secondary filter-employees dropdown-btn">
-          <i class="fa-solid fa-filter filter-icon"></i>
-          Filter
-        </button>
-        <div class="dropdown-content">
-          <a href="../../pages/employees.html">Outlet Bandung I</a>
-          <a href="#">Outlet Bandung II</a>
-          <a href="#">Outlet Surabaya</a>
-          <a href="#">Outlet Yogyakarta</a>
-          <a href="#">Outlet Jakarta</a>
-          <a href="#">Outlet Tasik</a>
-          <a href="#">Outlet Bekasi</a>
-          <a href="#">Outlet Garut</a>
-        </div>
-      </div> -->
-      <!-- end button filter -->
 
      
       <!-- start wrap list employees -->
@@ -63,19 +45,10 @@
           <div class="card-body">
             <h3> <?= $employee['nama']; ?></h3>
             <p> <?= $employee['role']; ?> </p>
+            <p> <?= $employee['outlet_id']; ?> </p>
           </div>
         </a>
         <?php endforeach; ?>
-
-        
-
-      <!-- button chat paradox help -->
-      <!-- <div class="btn-chat">
-        <a href="/pages/employees-add.html" class="action-btn">
-          <i class="fa-solid fa-message fa-2x message-icon"></i>
-        </a>
-      </div> -->
-      <!-- end button chat paradox help -->
 
     </div>
     <!-- end container-employees -->
