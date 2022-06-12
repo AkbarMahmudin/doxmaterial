@@ -51,15 +51,17 @@ function updateOutlet($id, $kota, $alamat, $gambar=NULL) {
 }
 
 function show_stock($id){
-    $query = "SELECT s.*, b.nama AS nama_barang FROM stok s INNER JOIN barang b ON s.barang_id = b.id WHERE s.barang_id = '$id'";
+    $query = "SELECT s.*, b.nama AS nama_barang FROM stok s INNER JOIN barang b ON s.barang_id = b.id WHERE s.outlet_id = '$id'";
     $result = mysqli_query($GLOBALS['DB'], $query);
 
-    $data = [];
-    while($row = mysqli_fetch_assoc($result)){
-        $data[] = $row; 
+    if ($result) {
+        $data = [];
+        while($row = mysqli_fetch_assoc($result)){
+            $data[] = $row; 
+        }
+        return $data;
     }
-
-    return $data;
+    return false;
 }
 
 function delete_outlets($id){

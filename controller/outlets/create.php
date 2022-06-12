@@ -3,10 +3,7 @@
 include '../../model/Outlet.php';
 @include '../../helpers/upload-image.php';
 
-// if (!isset($_POST)){
-//     echo "isi inputan";
-//     exit;
-// }
+session_start();
 
 $kota = $_POST['kota'];
 $alamat = $_POST['alamat'];
@@ -23,19 +20,19 @@ if (isset($_FILES['gambar'])) {
     switch ($result) {
       case 0:
         $response = [
-          'status' => 'error',
+          'status' => 'warning',
           'message' => 'Pilih gambar terlebih dahulu!'
         ];
         break;
       case -1:
         $response = [
-          'status' => 'error',
+          'status' => 'warning',
           'message' => 'Ekstensi file tidak valid!'
         ];
         break;
       case -2:
         $response = [
-          'status' => 'error',
+          'status' => 'warning',
           'message' => 'Ukuran file terlalu besar!'
         ];
         break;
@@ -46,14 +43,30 @@ if (isset($_FILES['gambar'])) {
         ];
         break;
     }
-   
+  
+    if ($result < 1) {
+      $_SESSION['response'] = $response;
+      header('location: ../../views/outlets/add-outlets.php');
+      return;
+    }
 }
 
- $newOutlet = createNewOutlet($kota, $alamat, $result);
+$newOutlet = createNewOutlet($kota, $alamat, $result);
 
-    if ($newOutlet === true) {
-        header('location: ../../views/outlets/index.php?status=success');
-    }
+if (!$newOutlet) {
+  $_SESSION['response'] = [
+    'status' => 'error',
+    'message' => 'Outlet gagal ditambahkan'
+  ];
+  header('location: ../../views/outlets/add-outlets.php');
+  return;
+}
+
+$_SESSION['response'] = [
+  'status' => 'success',
+  'message' => 'Outlet baru berhasil ditambahkan'
+];
+header('location: ../../views/outlets/index.php');
 
 
 ?>

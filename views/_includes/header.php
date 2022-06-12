@@ -1,6 +1,7 @@
 <?php
 
 include '../../model/User.php';
+// include '../../model/Outlet.php';
 
 session_start();
 
@@ -13,6 +14,10 @@ if (isset($_COOKIE['userId'])) {
     exit;
   }
   $user = getUserById($_SESSION['userId']);
+}
+
+if ($user['outlet_id']) {
+  $user = getUserById($user['id'], $user['outlet_id']);
 }
 ?>
 

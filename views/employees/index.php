@@ -31,7 +31,7 @@
      
       <!-- start wrap list employees -->
       <div class="list-employee">
-        <a href="add-employees.php" class="card btn-add">
+        <a href="add-employees.php" class="card hover btn-add">
           <i class="fa-solid fa-circle-plus"></i>
           <!-- <div class="card-body">
               </div> -->
@@ -40,7 +40,7 @@
          
         <!-- Employee -->
         <?php foreach($employees as $employee) : ?>
-        <a href="edit-employees.php?id=<?=$employee['id']?>" class="card employess">
+        <a href="edit-employees.php?id=<?=$employee['id']?>" class="card hover employess" style="color: inherit;" >
         <img src="<?= !$employee['gambar'] ? '../../img/no-img.jpg' : '../../img/employees/'.$employee['gambar']; ?>" alt="" class="img-card">
           <div class="card-body">
             <h3> <?= $employee['nama']; ?></h3>

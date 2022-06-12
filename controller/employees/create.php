@@ -1,45 +1,46 @@
 <?php
-    include '../../model/Employees.php';
-    include '../../helpers/upload-image.php';
+	include '../../model/Employees.php';
+	include '../../helpers/upload-image.php';
 
 	session_start();
 
-    $nama = $_POST['nama'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $role = $_POST['role'];
-    $outlet_id = $_POST['outlet'];
-    $response;
-
-    if (!isset($_FILES['gambar']) || !$_FILES['gambar']) {
-		echo "Input gambar kosong";
+	$nama = $_POST['nama'];
+	$username = $_POST['username'];
+	$password = hash('sha256', $_POST['password']);
+	$role = $_POST['role'];
+	$outletId = $role === 'admin' ? null : $_POST['outlet'];
+	$file = $_FILES['gambar']; 
+	$response;
+	
+	// Validasi username
+	$employee = getEmployeesByUserName($username);
+	if ($employee) {
+		$_SESSION['response'] = [
+			'status' => 'warning',
+			'message' => 'Username sudah digunakan'
+		];
+		header('location: ../../views/employees/add-employees.php');
 		return;
 	}
-
-	$file = $_FILES['gambar']; // ambil nilai inputan file
-	/* 
-		panggil func upload
-		param1: global variable $_FILES
-		param2: nama folder
-	**/
+	
+	// Validasi gambar
 	$gambar = upload($file, 'employees');
-
 	switch ($gambar) {
 		case 0:
 		  $response = [
-			'status' => 'error',
+			'status' => 'warning',
 			'message' => 'Pilih gambar terlebih dahulu!'
 		  ];
 		  break;
 		case -1:
 		  $response = [
-			'status' => 'error',
+			'status' => 'warning',
 			'message' => 'Ekstensi file tidak valid!'
 		  ];
 		  break;
 		case -2:
 		  $response = [
-			'status' => 'error',
+			'status' => 'warning',
 			'message' => 'Ukuran file terlalu besar!'
 		  ];
 		  break;
@@ -51,33 +52,26 @@
 		  break;
 	}
 
-    $newEmployees = createNewEmployees($nama, $username, $password, $role, $gambar);
-	
-    if ($newEmployees === true){
-		$response = [
-			'status' => 'success',
-			'message' => 'Pegawai baru berhasil ditambahkan'
-		];
+	if ($gambar < 1) {
+		$_SESSION['response'] = $response;
+		header('location: ../../views/employees/add-employees.php');
+		return;
 	}
+
+	$newEmployees = createNewEmployees($nama, $username, $password, $role, $outletId, $gambar);
+	
+	if ($newEmployees === false){
+		$response = [
+			'status' => 'error',
+			'message' => 'Pegawai baru gagal ditambahkan'
+		];
+		header('location: ../../views/employees/add-employees.php');
+	}
+	$response = [
+		'status' => 'success',
+		'message' => 'Pegawai baru berhasil ditambahkan'
+	];
 	
 	$_SESSION['response'] = $response;
 	header('location: ../../views/employees/index.php');
-    
-
-    // if ($newEmployees === true){
-    //     echo "
-    //     <>
-    //         Swal.fire({
-    //             icon: 'succes',
-    //             text: 'Pegawai baru berhasil ditambahkan',
-    //         });
-    //     </script>";
-    // }
-    
-    // if(!isset($nama) || !isset() ){
-    //     echo "isi inputan";
-    //     exit;
-    // }
-
-    // var_dump[];
 ?>

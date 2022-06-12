@@ -10,7 +10,7 @@ if (!isset($_POST['username']) && !isset($_POST['password'])) {
 }
 
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = hash('sha256', $_POST['password']);
 
 $user = login($username, $password);
 

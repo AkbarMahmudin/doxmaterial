@@ -13,7 +13,12 @@
         </a>
 
         <div class="padding-list">
-          <div class="side-outlet"></div>
+          <div class="side-outlet">
+            <?php if ($user['role'] != 'admin') : ?>
+              <?= $user['outlet_id'] ?>
+              <p><?= $user['alamat'] ?>, <?= $user['kota'] ?></p>
+            <?php endif; ?>
+          </div>
           <div class="nav_list">
             <?php if ($user['role'] === 'admin') : ?>
 
@@ -76,7 +81,7 @@
       </div>
       <div class="nav_bottom">
         <div class="nav_bottom-profil">
-          <img src="../../img/profil.png" alt="Foto Profil" class="profil_image" />
+          <img src="../../img/<?= $user['gambar'] ? 'employees//'.$user['gambar'] : 'profil.png' ?>" alt="Foto Profil" class="profil_image" />
            <span class="profil_name"><?= $user['username']; ?><br />
             <span class="profil_role"><?= $user['role']; ?></span></span>
           <form action="../../controller/users/logout.php" method="post">

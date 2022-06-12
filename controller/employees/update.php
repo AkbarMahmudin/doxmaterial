@@ -8,12 +8,22 @@ session_start();
 $id = $_POST['id'];
 $nama = $_POST['nama'];
 $username = $_POST['username'];
-$password = $_POST['password'];
+$password = hash('sha256', $_POST['password']);
 $role = $_POST['role'];
-$outlet = $_POST['outlet'];
+$outlet = $role === 'admin' ? null : $_POST['outlet'];
 $file_gambar = $_POST['file_gambar'];
 $gambar = $_FILES['gambar'];
 
+// Validasi username
+$employee = getEmployeesByUserName($username);
+if ($employee && $employee['id'] != $id) {
+  $_SESSION['response'] = [
+    'status' => 'warning',
+    'message' => 'Username sudah digunakan'
+  ];
+  header('location: ../../views/employees/edit-employees.php?id='.$id);
+  return;
+}
 
 // cek gambar
 if (isset($_FILES['gambar']) && $gambar['error'] != 4) {
@@ -22,13 +32,13 @@ if (isset($_FILES['gambar']) && $gambar['error'] != 4) {
   switch ($result) {
     case -1:
       $response = [
-        'status' => 'error',
+        'status' => 'warning',
         'message' => 'Ekstensi file tidak valid!'
       ];
       break;
     case -2:
       $response = [
-        'status' => 'error',
+        'status' => 'warning',
         'message' => 'Ukuran file terlalu besar!'
       ];
       break;
@@ -40,11 +50,15 @@ if (isset($_FILES['gambar']) && $gambar['error'] != 4) {
     return;
   }
   
-  $updateEmployees = update_employees($id, $nama, $username, $password, $role, $outlet, $result);
+  $updateEmployees = $_POST['password']
+    ? update_employees($id, $nama, $username, $role, $outlet, $password, $result)
+    : update_employees($id, $nama, $username, $role, $outlet, null, $result);
   if ($updateEmployees) unlink("../../img/employees/".$file_gambar);
 
 } else {
-  $updateEmployees = update_employees($id, $nama, $username, $password, $role, $outlet);
+  $updateEmployees = $_POST['password']
+    ? update_employees($id, $nama, $username, $role, $outlet, $password)
+    : update_employees($id, $nama, $username, $role, $outlet);
 }
 
 

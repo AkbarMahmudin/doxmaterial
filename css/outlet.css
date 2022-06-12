@@ -60,7 +60,9 @@
 }
 
 .detail_img a {
+  display: block;
   margin-bottom: 1rem;
+  width : max-content;
 }
 
 .detail_img img {

@@ -139,6 +139,13 @@ a {
   font-size: smaller;
 }
 
+.nav_bottom .profil_image {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-size: cover;
+}
+
 .nav_bottom .btn-logout {
   background: var(--first-color);
   width: 37px;

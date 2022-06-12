@@ -35,7 +35,7 @@
                   <form action="../../controller/barang/delete.php"method="POST"style="display:inline-block">
                     <input name="id"type="hidden"value="<?=$data['id'];?>">
                     <input name="gambar"type="hidden"value="<?=$data['gambar'];?>">
-                    <button class="btn btn-danger"type="submit"style="width:150px;">Hapus</button>
+                    <button class="btn btn-danger"type="submit"style="width:150px;" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
                   </form>
               </div>
           </div>

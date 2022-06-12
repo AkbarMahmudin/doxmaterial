@@ -4,6 +4,9 @@
 <head>
   <?php
   include '../_includes/header.php';
+  include '../../model/Outlet.php';
+
+  $outlets = getOutlets();
   ?>
   <!-- Custom Style -->
   <link rel="stylesheet" href="../../css/outlet.css">
@@ -26,7 +29,7 @@
 
       <form action="../../controller/employees/create.php" class="form" method="POST" enctype="multipart/form-data">
         <label> Nama </label>
-        <input type="text" name="nama" id="" class="form-control" placeholder="Masukkan nama" />
+        <input type="text" name="nama" id="" class="form-control" placeholder="Masukkan nama" value="<?= isset($_POST['nama']) ? $_POST['nama'] : '' ?>" />
 
         <label> Username </label>
         <input type="text" name="username" id="" class="form-control" placeholder="Masukkan username"/>
@@ -37,15 +40,16 @@
         <label> Role </label>
         <select name="role" id="role" class="form-control"> 
             <option selected>Select role</option>
-            <option value="Admin">Admin</option>
-            <option value="Kasir">Kasir</option>
+            <option value="admin">Admin</option>
+            <option value="kasir">Kasir</option>
         </select>
 
         <label> Toko </label>
         <select name="outlet" id="outlet" class="form-control"> 
             <option selected>Select toko</option>
-            <option value="Bandung">Bandung</option>
-            <option value="Jakarta">Jakarta</option>
+            <?php foreach($outlets as $outlet) : ?>
+              <option value="<?= $outlet['id'] ?>">(<?= $outlet['id'] ?>) <?= $outlet['alamat'] ?>, <?= $outlet['kota'] ?></option>
+            <?php endforeach; ?>
         </select>
 
         <label> Gambar </label>

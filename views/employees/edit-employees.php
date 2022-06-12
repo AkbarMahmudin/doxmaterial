@@ -14,6 +14,9 @@ $pegawai = getEmployeesByID($id);
 <head>
   <?php
   include '../_includes/header.php';
+  include '../../model/Outlet.php';
+
+  $outlets = getOutlets();
   ?>
   <!-- Custom Style -->
   <link rel="stylesheet" href="../../css/outlet.css">
@@ -32,7 +35,7 @@ $pegawai = getEmployeesByID($id);
     <!-- Coding disini -->
     <div class="container">
       <!-- start add outlets -->
-      <h1>Edit Pegawai</h1>
+      <h1>Profile Pegawai</h1>
 
       <form action="../../controller/employees/update.php" class="form" method = "POST" enctype="multipart/form-data">
 
@@ -45,20 +48,23 @@ $pegawai = getEmployeesByID($id);
         <input type="text" name="username" id="" class="form-control" value="<?= $pegawai['username']; ?>"/>
 
         <label> Password </label>
-        <input type="password" name="password" id="" class="form-control" value="<?= $pegawai['password']; ?>"/>
+        <input type="password" name="password" id="" class="form-control"/>
         
         <label> Role </label>
         <select name="role" id="role" class="form-control"> 
-            <option selected>Select role</option>
-            <option value="Admin" <?= $pegawai['role'] == 'admin' ? 'selected' : '' ?>>Admin</option>
-            <option value="Kasir" <?= $pegawai['role'] == 'kasir' ? 'selected' : '' ?>>Kasir</option>
+            <option>Select role</option>
+            <option value="admin" <?= $pegawai['role'] == 'admin' ? 'selected' : '' ?>>Admin</option>
+            <option value="kasir" <?= $pegawai['role'] == 'kasir' ? 'selected' : '' ?>>Kasir</option>
         </select>
 
         <label> Outlet </label>
         <select name="outlet" id="outlet" class="form-control"> 
-            <option selected>Select outlet</option>
-            <option value="OT01" <?= $pegawai['outlet_id'] == 'OT01' ? 'selected' : '' ?>>Bandung</option> 
-            <option value="OT02" <?= $pegawai['outlet_id'] == 'OT02' ? 'selected' : '' ?>>Jakarta</option>
+            <option>Select outlet</option>
+            <?php foreach($outlets as $outlet) : ?>
+              <option value="<?= $outlet['id'] ?>" <?= $pegawai['outlet_id'] === $outlet['id'] ? 'selected' : '' ?>>
+                (<?= $outlet['id'] ?>) <?= $outlet['alamat'] ?>, <?= $outlet['kota'] ?>
+              </option> 
+            <?php endforeach; ?>
         </select>
 
         <input type="hidden"name="file_gambar"value="<?=$pegawai['gambar'];?>">
@@ -72,7 +78,7 @@ $pegawai = getEmployeesByID($id);
         </div>
           <button type="button" class="btn" onclick="history.back()" style="margin-right: 20px">Batal</button>
           <button type="submit" class="btn btn-primary" >Simpan</button>
-          <a href="../../controller/employees/delete.php?id=<?= $pegawai['id']; ?>&gambar=<?=$pegawai['gambar'];?>" class="btn btn-danger" style="float: right;">Hapus</a>
+          <a href="../../controller/employees/delete.php?id=<?= $pegawai['id']; ?>&gambar=<?=$pegawai['gambar'];?>" class="btn btn-danger" style="float: right;" onclick="return confirm('Apakah anda yakin?')">Hapus</a>
       </form>
     
     </div>

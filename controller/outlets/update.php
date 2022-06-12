@@ -18,13 +18,13 @@ if (isset($_FILES['gambar']) && $gambar['error'] != 4) {
     switch ($result) {
       case -1:
         $response = [
-          'status' => 'error',
+          'status' => 'warning',
           'message' => 'Ekstensi file tidak valid!'
         ];
         break;
       case -2:
         $response = [
-          'status' => 'error',
+          'status' => 'warning',
           'message' => 'Ukuran file terlalu besar!'
         ];
         break;

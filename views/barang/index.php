@@ -25,14 +25,14 @@
 
         <section class="control">
           <form class="form-search">
-            <input type="text" class="input-search" placeholder="Cari barang">
-            <button class="btn btn-primary btn-search">Cari</button>
+            <input type="text" name="nama_barang" class="input-search" placeholder="Cari barang">
+            <button type="submit" class="btn btn-primary btn-search">Cari</button>
           </form>
         </section>
 
         <section class="content">
          
-          <a class="card btn-add" href="add-barang.php">
+          <a class="card hover btn-add" href="add-barang.php">
             <i class="fa-solid fa-circle-plus"></i>
             <!-- <div class="card-body">
             </div> -->

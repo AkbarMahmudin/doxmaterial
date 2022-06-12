@@ -21,7 +21,7 @@
     <!-- start container orders -->
     <div class="container" >
         <div class="wrap-all" style="display:flex; flex-direction:row; width:100%;" >
-            <div class="card" style="display:flex; margin:0 30px; width:25%; float-item:center; flex-direction:column; padding:20px;">
+            <div class="card" style="display:flex; margin:0 30px; width:25%; align-items:center; flex-direction:column; padding:20px;">
                 <img src="../../img/logo.png" alt="">
                 <h3>Jhon Doe</h3>
                 <p>+625845682152</p>

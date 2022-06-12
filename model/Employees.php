@@ -16,9 +16,18 @@ function getEmployees(){
     : false;
 }
 
-function createNewEmployees($nama, $username, $password, $role, $gambar){
-    $query = "INSERT INTO pegawai(nama, username, password, role, gambar)
-            VALUES('$nama', '$username', '$password', '$role', '$gambar')";
+function getEmployeesByUserName($username) {
+    $query = "SELECT * FROM pegawai WHERE username = '$username'";
+    $result = mysqli_query($GLOBALS['DB'], $query);
+    
+    return (mysqli_num_rows($result) > 0)
+    ? mysqli_fetch_assoc($result)
+    : false;
+}
+
+function createNewEmployees($nama, $username, $password, $role, $outletId, $gambar){
+    $query = "INSERT INTO pegawai(nama, username, password, role, outlet_id, gambar)
+            VALUES('$nama', '$username', '$password', '$role', '$outletId', '$gambar')";
             
     mysqli_query($GLOBALS['DB'], $query);
 
@@ -37,11 +46,18 @@ function getEmployeesByID($id){
     : false;
 }
 
-function update_employees($id, $nama, $username, $password, $role, $outlet, $gambar = null){
-    $query_update = "UPDATE pegawai SET nama='$nama', username='$username', password='$password', role ='$role', outlet_id='$outlet' WHERE id ='$id'";
-    if($gambar != null){
-        $query_update = "UPDATE pegawai SET nama='$nama', username='$username', password='$password', role ='$role', outlet_id='$outlet', gambar='$gambar' WHERE id ='$id'";
+function update_employees($id, $nama, $username, $role, $outlet, $password = null, $gambar = null){
+    $query_update = "UPDATE pegawai SET nama='$nama', username='$username', role ='$role', outlet_id='$outlet' ";
+
+    if ($password) {
+        $query_update .= ", password = '$password'";
     }
+
+    if($gambar != null){
+        $query_update .= ", gambar='$gambar'";
+    }
+
+    $query_update .= " WHERE id ='$id'";
     
     $result = mysqli_query($GLOBALS['DB'], $query_update);
 
