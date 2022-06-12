@@ -55,11 +55,10 @@
 
 /* section 3 */
 .left{
-    width: 64%;   
-    margin-right: 2rem;
+    width: 50%;   
 }
 .right{
-    width: 30%;
+    width: 50%;
 }
 .left table{
     font-size: smaller;
