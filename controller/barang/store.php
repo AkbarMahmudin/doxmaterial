@@ -31,29 +31,34 @@ if (isset($_FILES['gambar'])) {
   } else {
     $response = [
       'status' => 'success',
-      'message' => 'file berhasil ditambahkan'
+      'message' => 'Barang berhasil ditambahkan'
     ];
     $gambar = $result;
+    $newBarang = store($nama, $harga, $gambar);
   }
-}
-$newBarang = store($nama, $harga, $gambar);
 
-if (!$newBarang){
-  $response = [
-    'status' => 'error',
-    'message' => 'Barang gagal ditambahkan!'
-  ];
+  if ($result < 1) {
+    $_SESSION['response'] = $response;
+    header("location:../../views/barang/add-barang.php");
+    return;
+  }
+
   $_SESSION['response'] = $response;
-  header("location:../../views/barang/add-barang.php");
-  return;
 }
 
-$response = [
-  'status' => 'success',
-  'message' => 'Barang berhasil ditambahkan!'
-];
+if ($newBarang){
+  header("location:../../views/barang/index.php");
+}else{
+  header("location:../../views/barang/add-barang.php");
+}
 
-// menampilkan notifikasi
-$_SESSION['response'] = $response;
 
-header("location:../../views/barang/index.php");
+// $response = [
+//   'status' => 'success',
+//   'message' => 'Barang berhasil ditambahkan!'
+// ];
+
+// // menampilkan notifikasi
+// $_SESSION['response'] = $response;
+
+// header("location:../../views/barang/index.php");

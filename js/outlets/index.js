@@ -30,3 +30,17 @@ function updateStok(element) {
   const formEditStok = columns[2].querySelector('form');
   formEditStok.querySelector('button').click();
 }
+
+function addStok(element) {
+  const form = document.querySelector('#formStok');
+
+  if(element.innerText === 'Tambah Stok'){
+    form.style.display = 'block';
+    element.innerText = 'Batal';
+    window.scrollBy(0,300);
+  }
+  else{
+    form.style.display = 'none';
+    element.innerText = 'Tambah Stok';
+  }
+}

@@ -50,7 +50,7 @@ function updateOutlet($id, $kota, $alamat, $gambar=NULL) {
     : false;
 }
 
-function show_stock($id){
+function getStokByOuletId($id){
     $query = "SELECT s.*, b.nama AS nama_barang FROM stok s INNER JOIN barang b ON s.barang_id = b.id WHERE s.outlet_id = '$id'";
     $result = mysqli_query($GLOBALS['DB'], $query);
 
@@ -71,5 +71,16 @@ function delete_outlets($id){
     return (mysqli_affected_rows($GLOBALS['DB']) > 0)
     ? true
     : false;
+}
+
+function show_barang($outletId){
+    $query = "SELECT b.id AS id_barang, b.nama FROM barang b LEFT JOIN stok s ON b.id = s.barang_id WHERE b.id NOT IN (SELECT barang_id FROM stok WHERE outlet_id = '$outletId') GROUP BY b.id";
+    $result = mysqli_query($GLOBALS['DB'], $query);
+    $data = [];
+    while($row = mysqli_fetch_assoc($result)){
+        $data[] = $row; 
+    }
+
+    return $data;
 }
 

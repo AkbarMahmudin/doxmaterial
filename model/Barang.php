@@ -49,7 +49,7 @@ function show($id) {
 }
 
 function show_stock($id){
-    $query = "SELECT s.*, o.alamat AS alamat_outlet FROM stok s INNER JOIN outlet o ON s.outlet_id = o.id WHERE s.barang_id = '$id'";
+    $query = "SELECT s.*, o.alamat AS alamat_outlet, o.id AS id_outlet FROM stok s INNER JOIN outlet o ON s.outlet_id = o.id WHERE s.barang_id = '$id'";
     $result = mysqli_query($GLOBALS['DB'], $query);
 
     $data = [];
@@ -60,6 +60,16 @@ function show_stock($id){
     return $data;
 }
 
+function show_outlet($id){
+    $query = "SELECT o.id AS id_outlet, o.alamat AS alamat_outlet, o.kota AS kota FROM outlet o LEFT JOIN stok s ON o.id = s.outlet_id WHERE o.id NOT IN (SELECT outlet_id FROM stok WHERE barang_id = '$id') GROUP BY o.id";
+    $result = mysqli_query($GLOBALS['DB'], $query);
+    $data = [];
+    while($row = mysqli_fetch_assoc($result)){
+        $data[] = $row; 
+    }
+
+    return $data;
+}
 function update_barang($id,$nama,$harga,$gambar = NULL){
     $query = "UPDATE barang SET nama='$nama', harga='$harga'WHERE id='$id'";
     if($gambar){

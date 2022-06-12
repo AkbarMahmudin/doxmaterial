@@ -31,7 +31,7 @@
               <a href="../../views/barang" class="nav_link
               <?= strpos($_SERVER['REQUEST_URI'], 'barang') !== false ? 'active' : '' ?>
               ">
-              <i class="fa-solid fa-warehouse nav_icon"></i>
+              <i class="fa-solid fa-hammer"></i>
                 <span class="nav_name">Barang</span>
               </a>
               <a href="../../views/outlets" class="nav_link

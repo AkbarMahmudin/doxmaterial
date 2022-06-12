@@ -17,6 +17,16 @@
   // include show
   include '../../controller/barang/show.php';
 ?>
+<?php
+// var_dump($data_outlet);
+// if (empty($data_outlet)){
+//   echo "kosong";
+// }
+// else {
+//   echo "ada";
+// }
+// exit;
+?>
 
     <!-- Content Boody -->
     <main class="container">
@@ -60,20 +70,44 @@
                           <td><?= $row['alamat_outlet'];?></td>
                           <td>
                             <span><?= $row['jumlah'];?></span>
-                            <form action="#" style="display: none;">
-                              <input type="number" class="form-control" style="width: 70px; text-align: center; padding: .5rem 12px; margin: auto 0;">
-                              <button type="button" onclick="return alert('inserted')" hidden></button>
+                            <form action="../../controller/barang/editstok.php" method="POST" style="display: none;">
+                              <input type="hidden"name="idbrg"value="<?= $data['id'];?>" />
+                              <input type="hidden"name="idstok"value="<?= $row['id'];?>" />
+                              <input type="number"min="1" name="stok" id="stock"class="form-control" style="width: 70px; text-align: center; padding: .5rem 12px; margin: auto 0;">
+                              <button type="submit" hidden></button>
                             </form>
                           </td>
                           <td>
                             <button type="button" class="btn btn-secondary" onclick="editStok(this)" style="margin-right: .5rem;">Ubah</button>
-                            <button type="button" id="btn-delete" class="btn btn-danger">Hapus</button>
+                            <form action="../../controller/barang/deletestok.php"method="POST"style="display:inline-block;">
+                              <input type="hidden"name="idbrg"value="<?= $data['id'];?>" />
+                              <input type="hidden"name="idstok"value="<?= $row['id'];?>" />
+                            <button type="submit" id="btn-delete" class="btn btn-danger" onclick="return confirm('Apakah anda yakin?')">Hapus</button>
+                            </form>
                             <button type="button" id="btn-save" class="btn btn-primary" style="display: none;" onclick="updateStok(this)">Simpan</button>
                           </td>
                       </tr>
                       <?php } ?>
                   </tbody>
               </table>
+
+              <button class="btn btn-primary btn-block"id="tambahStok"onclick="addStok(this)" style="margin-top: 1rem;">Tambah Stok</button>
+              <div class="add-stok"id="formStok">
+                <form action="../../controller/barang/addstok.php" method="POST" class="form card" enctype="multipart/form-data"style="padding:1rem"> 
+                  <input type="hidden"name="idbrg"value="<?= $data['id'];?>">
+                  <label for="nama"> Pilih Outlet </label>
+                  <select name="outlet" id=""class="form-control"required>
+                  <?php foreach ($data_outlet as $key => $row) {?>
+                    <option value="<?= $row['id_outlet'];?>">(<?= $row['id_outlet']; ?>)<?= $row['alamat_outlet']; ?>, <?= $row['kota']; ?></option>
+                  <?php } ?>
+                  </select>
+                  <label for="stok"> Jumlah Stok </label>
+                  <input type="number" name="stock" class="form-control" required />
+
+                  <button type="submit" class="btn btn-primary">Tambah</button>
+
+                </form>
+              </div>
             </div>
         </div>
       </div>

@@ -78,6 +78,24 @@
                       <?php } ?>
                   </tbody>
               </table>
+
+              <button class="btn btn-primary btn-block"id="tambahStok"onclick="addStok(this)" style="margin-top: 1rem;">Tambah Stok</button>
+              <div class="add-stok card" id="formStok" style="display: none;">
+                <form action="../../controller/outlets/addStok.php" method="POST" style="padding:1rem;"> 
+                  <input type="hidden" name="outlet_id" value="<?= $data['id'];?>">
+                  <label for="nama"> Pilih Barang </label>
+                  <select name="barang" id="barang" class="form-control"required>
+                  <?php foreach ($data_barang as $key => $row) {?>
+                    <option value="<?= $row['id_barang'];?>"><?= $row['nama']; ?></option>
+                  <?php } ?>
+                  </select>
+                  <label for="stok"> Jumlah Stok </label>
+                  <input type="number" name="jumlah" class="form-control" required />
+
+                  <button type="submit" class="btn btn-primary">Tambah</button>
+
+                </form>
+              </div>
             </div>
         </div>
       </div>

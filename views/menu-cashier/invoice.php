@@ -93,7 +93,8 @@ include '../../controller/menu-cashier/invoice.php';
             extend: 'print',
             text: 'Print',
             tag: 'button',
-            title: $('#header-invoice').html(),
+            title: '',
+            messageTop: $('#header-invoice').html(),
             messageBottom: $('#detail-total').html(),
             customize: function(win) {
               $(win.document.body)
@@ -118,6 +119,7 @@ include '../../controller/menu-cashier/invoice.php';
             extend: 'pdf',
             text: 'Pdf',
             tag: 'button',
+            filename: `invoice-${Date.now()}`,
             className: 'btn btn-danger',
             init: function(api, node, config) {
               $(node).removeClass('dt-button')
