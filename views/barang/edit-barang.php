@@ -38,7 +38,7 @@ $barang = show($id);
       <input type="number" name="harga" id="harga" class="form-control"value="<?=$barang['harga'];?>" required />
       <input type="hidden"name="file_gambar"value="<?=$barang['gambar'];?>">
       <label for="GambarBarang"> Gambar Barang</label>
-      <img src="../../img/barang/<?=$barang['gambar'];?>" alt=""style="display:block;width:450px;height:300px;margin-bottom:1rem;">
+      <img src="../../img/barang/<?=$barang['gambar'];?>" alt=""style="display:block;max-width:300px;max-height:300px;object-fit : cover; object-position:center;margin-bottom:1rem;">
       <input type="file" name="gambar" id="inputFile"class="form-control" />
       <i style="color:red;">*Abaikan jika tidak ingin mengubah gambar</i>
       <div class="image-preview" id="imagePreview">

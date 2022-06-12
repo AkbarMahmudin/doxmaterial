@@ -31,25 +31,21 @@ if (isset($_FILES['gambar'])) {
       'message' => 'data berhasil diperbaharui'
     ];
     $gambar = $result;
+    $updateBarang = update_barang($id, $nama, $harga, $gambar);
   }
   
   // menampilkan notifikasi
   $_SESSION['response'] = $response;
 }
-$updateBarang = update_barang($id, $nama, $harga, $gambar);
-
 if (!$updateBarang){
-  $response = [
-    'status' => 'error',
-    'message' => 'Barang gagal diupdate!'
-  ];
-  $_SESSION['response'] = $response;
-  header("location:../../views/barang/index.php");
+  header("location:../../views/barang/show-barang.php?id=$id");
   return;
 }
 elseif ($updateBarang === -1){
     unlink("../../img/barang/".$file_gambar);
-    header("location:../../views/barang/index.php");
+    header("location:../../views/barang/show-barang.php?id=$id");
 }
-    header("location:../../views/barang/index.php");
+else {
+  header("location:../../views/barang/show-barang.php?id=$id");
+}
 

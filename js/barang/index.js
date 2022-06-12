@@ -7,14 +7,14 @@ function editStok(element) {
   const btnSave = element.parentElement.querySelector('#btn-save');
   
   // set value form
-  formEditStok.querySelector('input').value = stokColumn.innerText;
+  formEditStok.querySelector('#stock').value = stokColumn.innerText;
   
   if (element.innerText === 'Batal') {
     stokColumn.style.display = 'inline-block';
     formEditStok.style.display = 'none';
     btnDelete.style.display = 'inline-block';
     btnSave.style.display = 'none';
-    element.innerText = 'Edit';
+    element.innerText = 'Ubah';
   } else {
     stokColumn.style.display = 'none';
     formEditStok.style.display = 'inline-block';
@@ -29,4 +29,18 @@ function updateStok(element) {
   const columns = row.querySelectorAll('td');
   const formEditStok = columns[2].querySelector('form');
   formEditStok.querySelector('button').click();
+}
+
+function addStok(element) {
+  const form = document.querySelector('#formStok');
+
+  if(element.innerText ==='Tambah Stok'){
+    form.style.display = 'block';
+    element.innerText = 'Batal';
+    window.scrollBy(0,300);
+  }
+  else{
+    form.style.display = 'none';
+    element.innerText = 'Tambah Stok';
+  }
 }

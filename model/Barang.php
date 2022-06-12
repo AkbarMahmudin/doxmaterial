@@ -38,7 +38,7 @@ function show($id) {
 }
 
 function show_stock($id){
-    $query = "SELECT s.*, o.alamat AS alamat_outlet FROM stok s INNER JOIN outlet o ON s.outlet_id = o.id WHERE s.barang_id = '$id'";
+    $query = "SELECT s.*, o.alamat AS alamat_outlet, o.id AS id_outlet FROM stok s INNER JOIN outlet o ON s.outlet_id = o.id WHERE s.barang_id = '$id'";
     $result = mysqli_query($GLOBALS['DB'], $query);
 
     $data = [];
@@ -49,6 +49,16 @@ function show_stock($id){
     return $data;
 }
 
+function show_outlet($id){
+    $query = "SELECT o.id AS id_outlet, o.alamat AS alamat_outlet FROM outlet o LEFT JOIN stok s ON o.id = s.outlet_id WHERE o.id NOT IN (SELECT outlet_id FROM stok WHERE barang_id = '$id') GROUP BY o.id";
+    $result = mysqli_query($GLOBALS['DB'], $query);
+    $data = [];
+    while($row = mysqli_fetch_assoc($result)){
+        $data[] = $row; 
+    }
+
+    return $data;
+}
 function update_barang($id,$nama,$harga,$gambar = NULL){
     $query = "UPDATE barang SET nama='$nama', harga='$harga'WHERE id='$id'";
     if($gambar){
@@ -79,5 +89,32 @@ function showByStokId($stokId) {
     
     return mysqli_num_rows($result) > 0
     ? mysqli_fetch_assoc($result)
+    : false;
+}
+
+function addStok($stok,$outletId,$barang_id){
+    $query = "INSERT INTO stok (id, jumlah, outlet_id, barang_id) VALUES ('','$stok','$outletId','$barang_id')";
+    mysqli_query($GLOBALS['DB'], $query);
+
+    return (mysqli_affected_rows($GLOBALS['DB']) > 0)
+    ? true
+    : false;
+}
+
+function editStok($idstok, $stok){
+    $query = "UPDATE stok SET jumlah='$stok' WHERE  id= '$idstok'";
+    mysqli_query($GLOBALS['DB'], $query);
+
+    return (mysqli_affected_rows($GLOBALS['DB']) > 0)
+    ? true
+    : false;
+}
+
+function deleteStok($idstoks){
+    $query = "DELETE from stok WHERE id = '$idstoks'";
+    mysqli_query($GLOBALS['DB'], $query);
+
+    return (mysqli_affected_rows($GLOBALS['DB']) > 0)
+    ? true
     : false;
 }
