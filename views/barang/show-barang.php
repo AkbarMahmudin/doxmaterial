@@ -40,6 +40,7 @@
           <div class="detail_action">
               <h1> <?= $data['nama']; ?></h1>
               <h4 class="price">Rp. <?= $data['harga']; ?></h4>
+              <h4 class="stock">Total stok: <?= $total_stok ?> </h4>
               <div class="action">
                   <a href="edit-barang.php?id=<?=$data['id'];?>" class="btn btn-secondary">Edit</a>
                   <form action="../../controller/barang/delete.php"method="POST"style="display:inline-block">

@@ -102,3 +102,18 @@ function showByStokId($stokId) {
     ? mysqli_fetch_assoc($result)
     : false;
 }
+
+
+function totalStokByBarangId($id){
+    $query = "SELECT SUM(jumlah) AS total_stok FROM stok WHERE barang_id = '$id'";
+    $result = mysqli_query($GLOBALS['DB'], $query);
+    if ($result) {
+        $totalStok = 0;
+        while ($row = mysqli_fetch_assoc($result)) {
+            $totalStok += $row['total_stok'];
+        }
+        return $totalStok;
+    }
+    
+    return false;
+}
