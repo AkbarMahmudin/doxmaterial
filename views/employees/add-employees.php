@@ -37,12 +37,12 @@
         <label> Password </label>
         <input type="password" name="password" id="" class="form-control"/>
 
-        <label> Role </label>
+        <!-- <label> Role </label>
         <select name="role" id="role" class="form-control"> 
             <option selected>Select role</option>
             <option value="admin">Admin</option>
             <option value="kasir">Kasir</option>
-        </select>
+        </select> -->
 
         <label> Toko </label>
         <select name="outlet" id="outlet" class="form-control"> 

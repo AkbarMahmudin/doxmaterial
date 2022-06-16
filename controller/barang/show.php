@@ -9,4 +9,5 @@ $id = $_GET['id'];
 $data = show($id);
 $data_stok = show_stock($id);
 $data_outlet = show_outlet($id);
+$total_stok = totalStokByBarangId($id);
 ?>

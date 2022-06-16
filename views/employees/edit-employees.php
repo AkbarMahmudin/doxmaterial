@@ -50,12 +50,12 @@ $pegawai = getEmployeesByID($id);
         <label> Password </label>
         <input type="password" name="password" id="" class="form-control"/>
         
-        <label> Role </label>
+        <!-- <label> Role </label>
         <select name="role" id="role" class="form-control"> 
             <option>Select role</option>
-            <option value="admin" <?= $pegawai['role'] == 'admin' ? 'selected' : '' ?>>Admin</option>
-            <option value="kasir" <?= $pegawai['role'] == 'kasir' ? 'selected' : '' ?>>Kasir</option>
-        </select>
+            <option value="admin" >Admin</option>
+            <option value="kasir" >Kasir</option>
+        </select> -->
 
         <label> Outlet </label>
         <select name="outlet" id="outlet" class="form-control"> 
